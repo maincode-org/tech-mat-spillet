@@ -11,8 +11,8 @@ import {
 import { IonReactRouter } from '@ionic/react-router';
 import { receiptOutline, gameControllerOutline, accessibilityOutline } from 'ionicons/icons';
 import ProfilePage from './pages/ProfilePage';
-import Tab2 from './pages/Tab2';
-import Tab3 from './pages/Tab3';
+import Game from './pages/Game';
+import Progress from './pages/Progress';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -42,10 +42,10 @@ const App: React.FC = () => (
             <ProfilePage />
           </Route>
           <Route exact path="/tab2">
-            <Tab2 />
+            <Game />
           </Route>
           <Route path="/tab3">
-            <Tab3 />
+            <Progress />
           </Route>
           <Route exact path="/">
             <Redirect to="/profil" />

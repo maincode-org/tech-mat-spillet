@@ -37,7 +37,7 @@ import '../theme/variables.css';
 import Menu from "../components/Menu/Menu";
 import Avatar from "../components/Avatar/Avatar";
 
-const Tab3: React.FC = () => {
+const Progress: React.FC = () => {
   return (
       <div>
           <Menu/>
@@ -62,4 +62,4 @@ const Tab3: React.FC = () => {
   );
 };
 
-export default Tab3;
+export default Progress;
