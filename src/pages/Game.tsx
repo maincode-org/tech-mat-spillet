@@ -1,22 +1,35 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonContent, IonPage } from '@ionic/react';
+
+/* Core CSS required for Ionic components to work properly */
+import '@ionic/react/css/core.css';
+
+/* Basic CSS for apps built with Ionic */
+import '@ionic/react/css/normalize.css';
+import '@ionic/react/css/structure.css';
+import '@ionic/react/css/typography.css';
+
+/* Optional CSS utils that can be commented out */
+import '@ionic/react/css/padding.css';
+import '@ionic/react/css/float-elements.css';
+import '@ionic/react/css/text-alignment.css';
+import '@ionic/react/css/text-transformation.css';
+import '@ionic/react/css/flex-utils.css';
+import '@ionic/react/css/display.css';
+
+/* Theme variables */
+import '../theme/variables.css';
 
 const Game: React.FC = () => {
   return (
-    <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>Tech Mat spillet</IonTitle>
-        </IonToolbar>
-      </IonHeader>
-      <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">The Game</IonTitle>
-          </IonToolbar>
-        </IonHeader>
-          <h1>Contents of tech mat spillet</h1>
-      </IonContent>
-    </IonPage>
+    <div>
+        <IonPage class="ion-page" id="main-content">
+            <IonContent fullscreen>
+                <div className="container bg-violet">
+                    <h1>Contents of tech mat spillet</h1>
+                </div>
+            </IonContent>
+        </IonPage>
+    </div>
   );
 };
 

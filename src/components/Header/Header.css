@@ -1,0 +1,7 @@
+.menu-fixed {
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    height: 45px;
+    width: 45px;
+}

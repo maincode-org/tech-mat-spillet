@@ -1,20 +1,7 @@
 import {
-    IonMenu,
     IonPage,
-    IonHeader,
-    IonToolbar,
-    IonList,
-    IonListHeader,
-    IonTitle,
     IonContent,
-    IonMenuToggle,
-    IonItem,
-    IonIcon,
-    IonLabel,
-    IonButtons,
-    IonButton
 } from '@ionic/react';
-import { menuOutline, gameControllerOutline, bulbOutline, constructOutline, logOutOutline } from 'ionicons/icons';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -34,28 +21,16 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import '../theme/variables.css';
-import Menu from "../components/Menu/Menu";
-import Avatar from "../components/Avatar/Avatar";
+import Header from "../components/Header/Header";
 
 const Progress: React.FC = () => {
   return (
       <div>
-          <Menu/>
           <IonPage class="ion-page" id="main-content">
-              <IonHeader>
-                  <IonToolbar>
-                      <IonButtons slot="start">
-                          <IonMenuToggle>
-                              <IonButton>
-                                  <IonIcon icon={menuOutline}/>
-                              </IonButton>
-                          </IonMenuToggle>
-                      </IonButtons>
-                      <IonTitle>Progress</IonTitle>
-                  </IonToolbar>
-              </IonHeader>
-              <IonContent>
-                  <h1>Contents of progress page</h1>
+              <IonContent fullscreen>
+                  <div className="container bg-violet">
+                      <h1>Contents of progress page</h1>
+                  </div>
               </IonContent>
           </IonPage>
       </div>

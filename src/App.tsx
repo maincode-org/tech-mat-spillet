@@ -13,6 +13,8 @@ import { receiptOutline, gameControllerOutline, accessibilityOutline } from 'ion
 import ProfilePage from './pages/ProfilePage';
 import Game from './pages/Game';
 import Progress from './pages/Progress';
+import Header from "./components/Header/Header";
+import Menu from "./components/Menu/Menu";
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -35,6 +37,8 @@ import './theme/variables.css';
 
 const App: React.FC = () => (
   <IonApp>
+    <Menu/>
+    <Header/>
     <IonReactRouter>
       <IonTabs>
         <IonRouterOutlet>
