@@ -236,13 +236,36 @@ http://ionicframework.com/docs/theming/ */
 }
 
 .bg-violet {
-  background: blueviolet;
+  background: #a56be0;
 }
 
 .container {
+  padding: 5% 3%;
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+
+.game-tab-padding {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.slide-container {
+  height: 100%;
+  width: 100%;
+}
+
+.theory-description {
+  padding: 20px;
+  background: #50c8ff;
+  border-radius: 20px;
+}
+
+.math-assignment-description {
+  padding: 20px;
+  background: #50c8ff;
+  border-radius: 20px;
 }

@@ -55,12 +55,13 @@ const App: React.FC = () => (
             <Redirect to="/profil" />
           </Route>
         </IonRouterOutlet>
+
         <IonTabBar slot="bottom">
           <IonTabButton tab="tab1" href="/profil">
             <IonIcon icon={accessibilityOutline} />
             <IonLabel>Profil</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="tab2" href="/tab2">
+          <IonTabButton className="game-tab-padding" tab="tab2" href="/tab2">
             <IonIcon icon={gameControllerOutline} />
             <IonLabel>Opgaver</IonLabel>
           </IonTabButton>
@@ -69,6 +70,7 @@ const App: React.FC = () => (
             <IonLabel>Progress</IonLabel>
           </IonTabButton>
         </IonTabBar>
+
       </IonTabs>
     </IonReactRouter>
   </IonApp>

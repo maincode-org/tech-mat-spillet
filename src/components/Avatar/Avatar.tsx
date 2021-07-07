@@ -21,17 +21,16 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import '../../theme/variables.css';
 
-interface IProps {
+type IProps = {
   characterName: string;
 }
 
 const Avatar: React.FC<IProps> = ({ characterName }) => {
   return (
-    <div className="container bg-violet">
+    <div className="avatar-container bg-violet">
       <strong>{characterName}</strong>
         <IonImg className="avatar" src={avatar} />
     </div>
   );
 };
-
 export default Avatar;
