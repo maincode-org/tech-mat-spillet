@@ -1,4 +1,4 @@
-import './Avatar.css';
+import './avatar.css';
 import avatar from '../../assets/1F479.svg';
 import { IonImg } from '@ionic/react';
 

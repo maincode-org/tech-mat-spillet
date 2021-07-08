@@ -9,7 +9,7 @@ import {
     IonToolbar
 } from "@ionic/react";
 import {bulbOutline, constructOutline, pawOutline, logOutOutline} from "ionicons/icons";
-import './Menu.css';
+import './menu.css';
 
 const Menu: React.FC = () => {
     return (

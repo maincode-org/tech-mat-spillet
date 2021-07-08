@@ -1,6 +1,6 @@
 import { IonImg } from "@ionic/react";
 import { ReactNode } from "react";
-import './Theory.css';
+import './theory.css';
 
 type IProps = {
     description: ReactNode;
