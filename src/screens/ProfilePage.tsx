@@ -1,7 +1,8 @@
 import {
-    IonPage,
     IonContent,
+    IonPage,
 } from '@ionic/react';
+import Avatar from '../components/avatar/Avatar';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -21,20 +22,17 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import '../styles/ionic-theme.css';
-import Header from "../components/Header/Header";
 
-const Progress: React.FC = () => {
+const ProfilePage: React.FC = () => {
   return (
       <div>
           <IonPage class="ion-page" id="main-content">
               <IonContent fullscreen>
-                  <div className="container bg-violet">
-                      <h1>Contents of progress page</h1>
-                  </div>
+                  <Avatar characterName="Spellspitter"/>
               </IonContent>
           </IonPage>
       </div>
   );
 };
 
-export default Progress;
+export default ProfilePage;
