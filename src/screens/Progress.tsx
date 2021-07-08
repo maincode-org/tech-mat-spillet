@@ -22,8 +22,6 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import '../styles/ionic-theme.css';
-import Header from "../components/Header/Header";
-import {Doughnut} from "react-chartjs-2";
 
 const Progress: React.FC = () => {
   return (
