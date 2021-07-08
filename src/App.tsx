@@ -10,11 +10,11 @@ import {
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { receiptOutline, gameControllerOutline, accessibilityOutline } from 'ionicons/icons';
-import ProfilePage from './pages/ProfilePage';
-import Game from './pages/Game';
-import Progress from './pages/Progress';
-import Header from "./components/Header/Header";
-import Menu from "./components/Menu/Menu";
+import ProfilePage from './screens/ProfilePage';
+import Game from './screens/Game';
+import Progress from './screens/Progress';
+import Header from "./components/header/Header";
+import Menu from "./components/menu/Menu";
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';

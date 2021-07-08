@@ -1,6 +1,6 @@
 import { IonButton, IonButtons, IonHeader, IonIcon, IonMenuToggle, IonToolbar } from "@ionic/react";
 import { menuOutline } from "ionicons/icons";
-import './Header.css';
+import './header.css';
 
 const Header: React.FC = () => {
     return (

@@ -2,7 +2,7 @@ import {
     IonContent,
     IonPage,
 } from '@ionic/react';
-import Avatar from '../components/Avatar/Avatar';
+import Avatar from '../components/avatar/Avatar';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
