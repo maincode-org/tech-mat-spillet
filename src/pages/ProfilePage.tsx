@@ -1,17 +1,8 @@
 import {
-    IonButton,
-    IonButtons,
     IonContent,
-    IonHeader,
-    IonIcon,
-    IonMenuToggle,
     IonPage,
-    IonTitle,
-    IonToolbar
 } from '@ionic/react';
-import Header from "../components/Header/Header";
 import Avatar from '../components/Avatar/Avatar';
-import Menu from "../components/Menu/Menu";
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -30,7 +21,7 @@ import '@ionic/react/css/flex-utils.css';
 import '@ionic/react/css/display.css';
 
 /* Theme variables */
-import '../theme/variables.css';
+import '../styles/variables.css';
 
 const ProfilePage: React.FC = () => {
   return (
