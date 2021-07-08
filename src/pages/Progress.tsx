@@ -20,7 +20,7 @@ import '@ionic/react/css/flex-utils.css';
 import '@ionic/react/css/display.css';
 
 /* Theme variables */
-import '../styles/variables.css';
+import '../styles/ionic-theme.css';
 import Header from "../components/Header/Header";
 
 const Progress: React.FC = () => {

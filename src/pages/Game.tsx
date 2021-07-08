@@ -18,7 +18,7 @@ import '@ionic/react/css/flex-utils.css';
 import '@ionic/react/css/display.css';
 
 /* Theme variables */
-import '../styles/variables.css';
+import '../styles/ionic-theme.css';
 import Theory from "../components/Theory/Theory";
 import MathAssignment from "../components/MathAssignment/MathAssignment";
 
