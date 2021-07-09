@@ -4,7 +4,7 @@ import './doughnut-chart.css';
 export type IUnknownObject = Record<string, any>[];
 
 type IData = {
-    labels: string[],
+    labels?: string[];
     datasets: IDataSets[];
 }
 type IDataSets = {
@@ -16,16 +16,14 @@ type IDataSets = {
 }
 
 type IProps = {
-    height?: number;
-    width?: number;
     data: IData;
 }
 
-const DoughnutChart: React.FC<IProps> = ({height, width, data}) => {
+const DoughnutChart: React.FC<IProps> = ({ data}) => {
     return (
         <div className="chart-container">
             <h1>Dine skills</h1>
-            <Doughnut width={height} height={width} type="doughnut" data={data}/>
+            <Doughnut type="doughnut" data={data}/>
         </div>
     );
 }

@@ -30,10 +30,8 @@ const Progress: React.FC = () => {
               <IonContent fullscreen>
                   <div className="container bg-violet">
                       <DoughnutChart
-                          height={500}
-                          width={500}
                           data={{
-                              labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                              labels: ['HTML', 'Geometri', 'Algebra', 'Ligninger', 'CSS', 'Funktioner'],
                               datasets: [
                                   {
                                       label: '# of Votes',
@@ -63,5 +61,4 @@ const Progress: React.FC = () => {
       </div>
   );
 };
-
 export default Progress;
