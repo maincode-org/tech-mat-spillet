@@ -18,7 +18,7 @@ const Welcome: React.FC = () => {
   return (
     <IonPage>
       <IonContent ref={ionContentRef} className="bg-cover-blur">
-        <div className={styles.heroHeader}>
+        <div className={styles.backgroundParticles}>
           <Particles params={options} height={'100vh'} />
         </div>
 

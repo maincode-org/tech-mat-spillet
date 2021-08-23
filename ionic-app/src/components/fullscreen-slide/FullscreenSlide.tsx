@@ -7,6 +7,10 @@ type IProps = {
 };
 
 const FullscreenSlide: React.FC<IProps> = ({ className, children }) => {
-  return <IonSlide className={`${className ?? ''} ${styles.bgRed}`}>{children}</IonSlide>;
+  return (
+    <IonSlide className={className ?? ''}>
+      <div className={`${styles.paper} glass-bg rounded card-shadow`}>{children}</div>
+    </IonSlide>
+  );
 };
 export default FullscreenSlide;
