@@ -4,7 +4,7 @@ import styles from './welcome.module.css';
 import SwipeIndicator from '../../components/swipe-indicator/SwipeIndicator';
 import FullscreenSlide from '../../components/fullscreen-slide/FullscreenSlide';
 import Particles from 'react-particles-js';
-import options from './particlesConfig';
+import options from '../../lib/particleImagesConfig';
 
 const Welcome: React.FC = () => {
   const slideOpts = {
@@ -30,28 +30,7 @@ const Welcome: React.FC = () => {
               <SwipeIndicator className="m-2" />
             </div>
           </FullscreenSlide>
-          <FullscreenSlide>
-            <Particles
-              params={{
-                particles: {
-                  number: {
-                    value: 50,
-                  },
-                  size: {
-                    value: 3,
-                  },
-                },
-                interactivity: {
-                  events: {
-                    onhover: {
-                      enable: true,
-                      mode: 'repulse',
-                    },
-                  },
-                },
-              }}
-            />
-          </FullscreenSlide>
+          <FullscreenSlide>hi</FullscreenSlide>
         </IonSlides>
       </IonContent>
     </IonPage>
