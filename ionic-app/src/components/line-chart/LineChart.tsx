@@ -12,7 +12,7 @@ const LineChart: React.FC<IProps> = ({ className }) => {
     labels: ['1', '2', '3', '4', '5', '6'],
     datasets: [
       {
-        label: 'f(x)=x>10',
+        label: 'f(x)=x+10',
         data: [10, 11, 12, 13, 14, 15],
         fill: false,
         backgroundColor: 'rgb(255,187,99)',

@@ -1,4 +1,4 @@
-import { IonContent, IonItem, IonPage, IonSelect, IonSelectOption } from '@ionic/react';
+import { IonContent, IonPage, IonSelect, IonSelectOption } from '@ionic/react';
 import styles from './assignment.module.css';
 import LineChart from '../../components/line-chart/LineChart';
 import { useState } from 'react';
@@ -19,10 +19,10 @@ const Assignment: React.FC = () => {
             <p className="mr-1">f(x) = x</p>
             <div className={styles.vl} />
             <IonSelect className="mx-1" onIonChange={(e) => setSelectInput(e.detail.value)}>
-              <IonSelectOption value=">">{`>`}</IonSelectOption>
-              <IonSelectOption value="<">{`<`}</IonSelectOption>
-              <IonSelectOption value="≥">{`≥`}</IonSelectOption>
-              <IonSelectOption value="≤">{`≤`}</IonSelectOption>
+              <IonSelectOption value="+">{`+`}</IonSelectOption>
+              <IonSelectOption value="-">{`-`}</IonSelectOption>
+              <IonSelectOption value="*">{`*`}</IonSelectOption>
+              <IonSelectOption value="/">{`/`}</IonSelectOption>
             </IonSelect>
             <div className={styles.vl} />
             <input className="ml-1 p-05" value={input} onChange={(e) => setInput(e.target.value)} />
