@@ -3,6 +3,7 @@ import { IonReactRouter } from '@ionic/react-router';
 import { Route } from 'react-router-dom';
 import './styles/generics.css';
 import Welcome from './screens/welcome/Welcome';
+import Assignment from './screens/Assignment/Assignment';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -33,6 +34,7 @@ const App: React.FC = () => {
       <IonApp>
         <IonReactRouter>
           <IonRouterOutlet id="main">
+            <Route exact path="/assignment" component={Assignment} />
             <Route exact path="/" component={Welcome} />
           </IonRouterOutlet>
         </IonReactRouter>
