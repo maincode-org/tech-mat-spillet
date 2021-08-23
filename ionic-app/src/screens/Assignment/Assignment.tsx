@@ -1,4 +1,4 @@
-import { IonContent, IonPage, IonSelect, IonSelectOption } from '@ionic/react';
+import { IonContent, IonItem, IonPage, IonSelect, IonSelectOption } from '@ionic/react';
 import styles from './assignment.module.css';
 import LineChart from '../../components/line-chart/LineChart';
 import { useState } from 'react';
@@ -12,24 +12,24 @@ const Assignment: React.FC = () => {
       <IonContent>
         <div className="p-1 w-full h-full flex flex-col items-center">
           <div className={`${styles.questionContainer} rounded`}>
-            <h4> Skriv en funktion hvor alle funktionens y-værdierne er større end 10. </h4>
+            <h4> Konstruer et funktionsudtryk hvor alle funktionens y-værdierne er større end 10. </h4>
           </div>
-          <br />
-          <br />
 
-          <div className="flex">
-            <p>f(x) = x</p>
-            <IonSelect className="ml-2" onIonChange={(e) => setSelectInput(e.detail.value)}>
-              <IonSelectOption value={'>'}>{`>`}</IonSelectOption>
-              <IonSelectOption value={'<'}>{`<`}</IonSelectOption>
-              <IonSelectOption value={'>='}>{`>=`}</IonSelectOption>
-              <IonSelectOption value={'<='}>{`<=`}</IonSelectOption>
+          <div className={`${styles.functionBuilderContainer} flex items-center rounded px-1 mt-3`}>
+            <p className="mr-1">f(x) = x</p>
+            <div className={styles.vl} />
+            <IonSelect className="mx-1" onIonChange={(e) => setSelectInput(e.detail.value)}>
+              <IonSelectOption value=">">{`>`}</IonSelectOption>
+              <IonSelectOption value="<">{`<`}</IonSelectOption>
+              <IonSelectOption value="≥">{`≥`}</IonSelectOption>
+              <IonSelectOption value="≤">{`≤`}</IonSelectOption>
             </IonSelect>
-            <input value={input} onChange={(e) => setInput(e.target.value)} className="ml-2 p-05" />
+            <div className={styles.vl} />
+            <input className="ml-1 p-05" value={input} onChange={(e) => setInput(e.target.value)} />
           </div>
           {selectInput && input && (
             <div className="flex mt-2 justify-center">
-              <p>Din funktion:</p>
+              <p>Dit svar:</p>
               <h3 className="ml-2">{`f(x) = x ${selectInput} ${input}`}</h3>
             </div>
           )}
