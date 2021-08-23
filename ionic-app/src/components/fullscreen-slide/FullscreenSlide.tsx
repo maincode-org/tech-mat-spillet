@@ -1,11 +1,12 @@
 /** Describe the purpose of the FullscreenSlide component here.*/
 import { IonSlide } from '@ionic/react';
+import styles from './fullscreen-slider.module.css';
 
 type IProps = {
   className?: string;
 };
 
 const FullscreenSlide: React.FC<IProps> = ({ className, children }) => {
-  return <IonSlide className={className}>{children}</IonSlide>;
+  return <IonSlide className={`${className ?? ''} ${styles.bgRed}`}>{children}</IonSlide>;
 };
 export default FullscreenSlide;

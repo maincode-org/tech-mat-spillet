@@ -1,7 +1,10 @@
-import { IonContent, IonPage, IonSlides, IonSlide } from '@ionic/react';
+import { IonContent, IonPage, IonSlides } from '@ionic/react';
 import { useRef } from 'react';
+import styles from './welcome.module.css';
 import SwipeIndicator from '../../components/swipe-indicator/SwipeIndicator';
 import FullscreenSlide from '../../components/fullscreen-slide/FullscreenSlide';
+import Particles from 'react-particles-js';
+import options from './particlesConfig';
 
 const Welcome: React.FC = () => {
   const slideOpts = {
@@ -15,8 +18,12 @@ const Welcome: React.FC = () => {
   return (
     <IonPage>
       <IonContent ref={ionContentRef} className="bg-cover-blur">
-        <IonSlides options={slideOpts} onIonSlideDidChange={scrollToTop}>
-          <FullscreenSlide>
+        <div className={styles.heroHeader}>
+          <Particles params={options} height={'100vh'} />
+        </div>
+
+        <IonSlides className={styles.slider} options={slideOpts} onIonSlideDidChange={scrollToTop}>
+          <FullscreenSlide className={styles.slide}>
             <div className="flex flex-col justify-center w-full items-center">
               <h2>Velkommen til</h2>
 
@@ -24,7 +31,26 @@ const Welcome: React.FC = () => {
             </div>
           </FullscreenSlide>
           <FullscreenSlide>
-            <div className="flex flex-col justify-center">slide2</div>
+            <Particles
+              params={{
+                particles: {
+                  number: {
+                    value: 50,
+                  },
+                  size: {
+                    value: 3,
+                  },
+                },
+                interactivity: {
+                  events: {
+                    onhover: {
+                      enable: true,
+                      mode: 'repulse',
+                    },
+                  },
+                },
+              }}
+            />
           </FullscreenSlide>
         </IonSlides>
       </IonContent>
