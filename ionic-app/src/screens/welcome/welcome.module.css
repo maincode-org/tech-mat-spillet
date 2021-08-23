@@ -1,0 +1,11 @@
+.gameShowLogo {
+  width: 60%;
+  height: 60%;
+  margin-top: 4rem;
+  filter: drop-shadow(0 0 0.75rem var(--ion-color-primary));
+}
+
+.swipeRightArrow {
+  height: 30px;
+  width: 30px;
+}
