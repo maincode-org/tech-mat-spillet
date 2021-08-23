@@ -1,0 +1,21 @@
+.icon {
+  /* Structure */
+  width: 1.5rem;
+  height: 1.5rem;
+  opacity: 1;
+  margin: 2px;
+}
+.timelineContainer {
+  width: 100%;
+  padding: 0;
+}
+.paperContainer {
+  padding: 0.5rem;
+}
+.paperContainer h6 {
+  font-weight: bold;
+  padding-bottom: 8px;
+}
+.opacity {
+  opacity: 0.3;
+}

@@ -1,0 +1,7 @@
+.container::part(background) {
+  background: url('../../assets/rocket_background.jpg') fixed center no-repeat;
+  background-size: cover;
+}
+.card {
+  background: transparent;
+}
