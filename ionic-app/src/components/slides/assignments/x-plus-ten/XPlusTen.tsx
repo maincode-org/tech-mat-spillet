@@ -1,4 +1,4 @@
-import styles from './assignment.module.css';
+import styles from './x-plus-ten.module.css';
 import LineChart from '../../../line-chart/LineChart';
 import CodeEditor from '../../../code/editor/CodeEditor';
 
