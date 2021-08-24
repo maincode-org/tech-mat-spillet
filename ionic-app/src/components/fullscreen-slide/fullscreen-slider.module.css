@@ -8,6 +8,10 @@
   letter-spacing: 0.1rem;
 }
 
+.subtitle {
+  color: rgba(90, 90, 90, 1);
+}
+
 .logo {
   position: fixed;
   height: 6%;

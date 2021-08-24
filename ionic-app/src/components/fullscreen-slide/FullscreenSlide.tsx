@@ -5,8 +5,8 @@ import maincodeLogo from '../../assets/maincode-logo-notfilled.png';
 import SwipeIndicator from '../swipe-indicator/SwipeIndicator';
 
 type IProps = {
-  title?: string;
-  subtitle?: string;
+  title?: string | JSX.Element;
+  subtitle?: string | JSX.Element;
   className?: string;
 };
 
