@@ -1,5 +1,3 @@
-/** Describe the purpose of the Welcome component here.*/
-import SwipeIndicator from '../../swipe-indicator/SwipeIndicator';
 import TeachingImg from '../../../assets/teaching.svg';
 import { IonImg } from '@ionic/react';
 import styles from './welcome.module.css';
