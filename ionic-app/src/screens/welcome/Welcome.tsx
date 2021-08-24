@@ -5,6 +5,8 @@ import SwipeIndicator from '../../components/swipe-indicator/SwipeIndicator';
 import FullscreenSlide from '../../components/fullscreen-slide/FullscreenSlide';
 import Particles from 'react-particles-js';
 import options from '../../lib/particleImagesConfig';
+import Assignment from '../Assignment/Assignment';
+import AssignmentTwo from '../Assignment2/AssignmentTwo';
 
 const Welcome: React.FC = () => {
   const slideOpts = {
@@ -26,11 +28,15 @@ const Welcome: React.FC = () => {
           <FullscreenSlide className={styles.slide}>
             <div className="flex flex-col justify-center w-full items-center">
               <h2>Velkommen til</h2>
-
               <SwipeIndicator className="m-2" />
             </div>
           </FullscreenSlide>
-          <FullscreenSlide>hi</FullscreenSlide>
+          <FullscreenSlide>
+            <Assignment />
+          </FullscreenSlide>
+          <FullscreenSlide>
+            <AssignmentTwo />
+          </FullscreenSlide>
         </IonSlides>
       </IonContent>
     </IonPage>

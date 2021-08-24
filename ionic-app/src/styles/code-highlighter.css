@@ -1,0 +1,23 @@
+.statement {
+    color: #b58900;
+}
+
+.declaration {
+    color: #b58900;
+}
+
+.expression {
+    color: #859900;
+}
+
+.operation {
+    color: #268bd2;
+}
+
+.value {
+    color: #2aa198;
+}
+
+.assignment {
+    color: #268bd2;
+}

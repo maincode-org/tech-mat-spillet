@@ -1,16 +1,20 @@
 import { IonContent, IonPage, IonChip, IonLabel } from '@ionic/react';
 import styles from './assignment-two.module.css';
+import parse from 'html-react-parser';
 import { useState } from 'react';
+import { highlight } from '../../lib/code-highlighter';
 
 const AssignmentTwo: React.FC = () => {
   const [chosenAnswer, setChosenAnswer] = useState<string[]>([]);
 
-  const code = `funktion erPunktetGyldigt(x, y) { 
+  const code = `
+  funktion erPunktetGyldigt(x, y) { 
      hvis ( ${!chosenAnswer?.[0] ? '________' : chosenAnswer.reduce((acc, cur) => acc + cur, '')} ) {
-     returner sandt; 
+        returner sandt; 
      } ellers {
-     returner falsk;  }}`;
-
+        returner falsk; 
+     }
+  }`;
   const options = ['x', 'y', '+', '-', '>', '<', '=', '1', '10', '9'];
 
   return (
@@ -20,13 +24,13 @@ const AssignmentTwo: React.FC = () => {
           <div className={`${styles.questionContainer} rounded`}>
             <h4> Konstruer en funktion som tager to parametre x og y, som returnere hvorvidt koordinatet (x,y) er et validt punkt på grafen fra før f(x)=x+10. </h4>
           </div>
-          <div className={`${styles.codeContainer} mt-5 rounded`}>
-            <p className="p-1">{code}</p>
+          <div className={`${styles.codeContainer} mt-3 rounded`}>
+            <pre className="m-0 mb-05 text-left">{parse(highlight(code))}</pre>
           </div>
 
-          <div className="mt-3">
+          <div className="py-1 px-2 mt-3 glass-bg rounded">
             {options.map((o, i) => (
-              <IonChip key={i} color="primary" onClick={(e) => setChosenAnswer([...chosenAnswer, o])}>
+              <IonChip key={i} color="primary" onClick={() => setChosenAnswer([...chosenAnswer, o])}>
                 <IonLabel>{o}</IonLabel>
               </IonChip>
             ))}
