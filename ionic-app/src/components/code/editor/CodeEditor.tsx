@@ -1,5 +1,5 @@
-import styles from '../../assignment/assignment-two/assignment-two.module.css';
 import CodeHighlighter from '../highlighter/CodeHighlighter';
+import styles from './code-editor.module.css';
 import { IonChip, IonLabel } from '@ionic/react';
 import { useEffect, useState } from 'react';
 
