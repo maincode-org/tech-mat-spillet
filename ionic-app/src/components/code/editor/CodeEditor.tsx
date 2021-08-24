@@ -1,4 +1,4 @@
-import styles from '../../assignment/assignment-two/assignment-two.module.css';
+import styles from './code-editor.module.css';
 import CodeHighlighter from '../highlighter/CodeHighlighter';
 import { IonChip, IonLabel } from '@ionic/react';
 import { useEffect, useState } from 'react';
@@ -37,8 +37,22 @@ const CodeEditor: React.FC<IProps> = ({ codeSnippet, options, correctAnswer, cla
     setChosenAnswer(answerState);
   };
 
+  const isUserInputCorrect = (userInput: string, correctAnswer: string) => userInput === correctAnswer;
+
   return (
     <div className={className}>
+      {chosenAnswer.toString().replace(/,/g, '').replace(/_/g, '').length === correctAnswer.length && (
+        <div className={styles.correctAnswerContainer}>
+          <span className="w-full h-full">
+            {isUserInputCorrect(
+              chosenAnswer.reduce((acc, cur) => acc + cur, ''),
+              correctAnswer
+            )
+              ? '✓'
+              : '🗙'}
+          </span>
+        </div>
+      )}
       <div className={`${styles.codeContainer} card-shadow rounded`}>
         <CodeHighlighter code={code} />
       </div>
