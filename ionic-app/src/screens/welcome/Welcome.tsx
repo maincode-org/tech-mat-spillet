@@ -5,8 +5,8 @@ import SwipeIndicator from '../../components/swipe-indicator/SwipeIndicator';
 import FullscreenSlide from '../../components/fullscreen-slide/FullscreenSlide';
 import Particles from 'react-particles-js';
 import options from '../../lib/particleImagesConfig';
-import Assignment from '../Assignment/Assignment';
-import AssignmentTwo from '../Assignment2/AssignmentTwo';
+import Assignment from '../../components/assignment/assignment/Assignment';
+import AssignmentTwo from '../../components/assignment/assignment-two/AssignmentTwo';
 
 const Welcome: React.FC = () => {
   const slideOpts = {

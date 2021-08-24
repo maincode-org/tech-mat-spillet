@@ -1031,6 +1031,10 @@
   filter: brightness(130%);
 }
 
+.letter-space {
+  letter-spacing: 0.5rem;
+}
+
 .bg-cover-blur::part(background) {
   background-size: cover !important;
   filter: blur(1px);
