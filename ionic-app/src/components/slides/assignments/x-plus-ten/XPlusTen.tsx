@@ -1,9 +1,9 @@
 import { IonSelect, IonSelectOption } from '@ionic/react';
-import styles from './assignment.module.css';
+import styles from './x-plus-ten.module.css';
 import LineChart from '../../../line-chart/LineChart';
 import { useState } from 'react';
 
-const Assignment: React.FC = () => {
+const XPlusTen: React.FC = () => {
   const [selectInput, setSelectInput] = useState('');
   const [input, setInput] = useState('');
 
@@ -39,4 +39,4 @@ const Assignment: React.FC = () => {
     </div>
   );
 };
-export default Assignment;
+export default XPlusTen;
