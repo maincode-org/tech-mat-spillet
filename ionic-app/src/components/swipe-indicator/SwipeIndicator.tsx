@@ -10,7 +10,7 @@ type IProps = {
 
 const SwipeIndicator: React.FC<IProps> = ({ className }) => {
   return (
-    <div className={`${className} p-05 glass-bg rounded`}>
+    <div className={`${className} ${styles.swipeContainer} p-05 glass-bg rounded`}>
       <IonImg className={`${styles.swipeRightArrow} self-center swingimage`} src={swipeRight} />
     </div>
   );
