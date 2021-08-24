@@ -27,3 +27,11 @@
   bottom: 3%;
   right: 2%;
 }
+
+.progressIndicator {
+  position: absolute;
+  color: rgba(90, 90, 90, 1);
+  letter-spacing: 0.1rem;
+  top: 4%;
+  right: 3%;
+}

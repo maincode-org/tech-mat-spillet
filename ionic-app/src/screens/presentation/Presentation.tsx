@@ -33,7 +33,7 @@ const Presentation: React.FC = () => {
 
         <IonSlides className={styles.slider} options={slideOpts} ref={ionSlidesRef} onIonSlideDidChange={handleSlideChange}>
           {slides.map((s, i) => (
-            <FullscreenSlide key={i} title={s.title} subtitle={s.subtitle}>
+            <FullscreenSlide key={i} progressIndicator={`${i + 1}/${slides.length}`} title={s.title} subtitle={s.subtitle}>
               {s.content}
             </FullscreenSlide>
           ))}

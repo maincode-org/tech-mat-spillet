@@ -7,10 +7,11 @@ import SwipeIndicator from '../swipe-indicator/SwipeIndicator';
 type IProps = {
   title?: string | JSX.Element;
   subtitle?: string | JSX.Element;
+  progressIndicator?: string | JSX.Element;
   className?: string;
 };
 
-const FullscreenSlide: React.FC<IProps> = ({ title, subtitle, className, children }) => {
+const FullscreenSlide: React.FC<IProps> = ({ title, subtitle, progressIndicator, className, children }) => {
   return (
     <IonSlide className={className ?? ''}>
       <div className={`${styles.paper} glass-bg rounded card-shadow pt-1`}>
@@ -20,6 +21,7 @@ const FullscreenSlide: React.FC<IProps> = ({ title, subtitle, className, childre
         {title && <h1 className={styles.title}>{title}</h1>}
         {subtitle && <h3 className={styles.subtitle}>{subtitle}</h3>}
         {children}
+        {progressIndicator && <div className={styles.progressIndicator}>{progressIndicator}</div>}
       </div>
     </IonSlide>
   );
