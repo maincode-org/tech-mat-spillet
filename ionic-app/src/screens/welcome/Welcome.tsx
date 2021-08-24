@@ -15,7 +15,14 @@ const Welcome: React.FC = () => {
   };
 
   const ionContentRef = useRef<HTMLIonContentElement>(null);
-  const scrollToTop = () => ionContentRef.current && ionContentRef?.current.scrollToTop(200);
+  const ionSlidesRef = useRef<HTMLIonSlidesElement>(null);
+
+  const handleSlideChange = (): void => {
+    // Scroll to top
+    ionContentRef.current && ionContentRef?.current.scrollToTop(200);
+
+    console.log(ionSlidesRef.current?.getActiveIndex());
+  };
 
   return (
     <IonPage>
@@ -24,7 +31,7 @@ const Welcome: React.FC = () => {
           <Particles params={options} height={'100vh'} />
         </div>
 
-        <IonSlides className={styles.slider} options={slideOpts} onIonSlideDidChange={scrollToTop}>
+        <IonSlides className={styles.slider} options={slideOpts} ref={ionSlidesRef} onIonSlideDidChange={handleSlideChange}>
           <FullscreenSlide className={styles.slide} title="Maincode præsenterer">
             <div className="flex flex-col justify-center w-full items-center">
               <h2>Velkommen til</h2>
