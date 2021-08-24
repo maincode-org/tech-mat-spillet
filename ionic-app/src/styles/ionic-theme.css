@@ -7,6 +7,10 @@ http://ionicframework.com/docs/theming/ */
   font-family: 'Tomorrow', sans-serif;
 }
 
+body {
+  cursor: grab;
+}
+
 p {
   white-space: pre-line;
 }

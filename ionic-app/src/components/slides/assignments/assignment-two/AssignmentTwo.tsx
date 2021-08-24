@@ -1,5 +1,5 @@
 import styles from './assignment-two.module.css';
-import CodeEditor from '../../code/editor/CodeEditor';
+import CodeEditor from '../../../code/editor/CodeEditor';
 
 const AssignmentTwo: React.FC = () => {
   const codeSnippetInput = `

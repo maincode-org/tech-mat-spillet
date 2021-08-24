@@ -3,11 +3,6 @@
   align-items: start;
 }
 
-.swipeRightArrow {
-  height: 30px;
-  width: 30px;
-}
-
 .backgroundParticles {
   position: fixed !important;
   left: 0;

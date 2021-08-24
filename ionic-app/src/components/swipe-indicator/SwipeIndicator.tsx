@@ -1,5 +1,5 @@
 import { IonImg } from '@ionic/react';
-import styles from '../../screens/welcome/welcome.module.css';
+import styles from './swipe-indicator.module.css';
 import swipeRight from '../../assets/SWIPERIGHT.svg';
 
 /** Describe the purpose of the SwipeIndicator component here.*/
