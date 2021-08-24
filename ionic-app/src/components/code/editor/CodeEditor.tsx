@@ -37,20 +37,11 @@ const CodeEditor: React.FC<IProps> = ({ codeSnippet, options, correctAnswer, cla
     setChosenAnswer(answerState);
   };
 
-  const isUserInputCorrect = (userInput: string, correctAnswer: string) => userInput === correctAnswer;
-
   return (
     <div className={className}>
       {chosenAnswer.toString().replace(/,/g, '').replace(/_/g, '').length === correctAnswer.length && (
         <div className={styles.correctAnswerContainer}>
-          <span className="w-full h-full">
-            {isUserInputCorrect(
-              chosenAnswer.reduce((acc, cur) => acc + cur, ''),
-              correctAnswer
-            )
-              ? '✓'
-              : '🗙'}
-          </span>
+          <span className="w-full h-full">{chosenAnswer.reduce((acc, cur) => acc + cur, '') === correctAnswer ? '✓' : '🗙'}</span>
         </div>
       )}
       <div className={`${styles.codeContainer} card-shadow rounded`}>
