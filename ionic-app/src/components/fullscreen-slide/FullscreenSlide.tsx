@@ -12,7 +12,7 @@ type IProps = {
 const FullscreenSlide: React.FC<IProps> = ({ title, subtitle, className, children }) => {
   return (
     <IonSlide className={className ?? ''}>
-      <div className={`${styles.paper} glass-bg rounded card-shadow`}>
+      <div className={`${styles.paper} glass-bg rounded card-shadow pt-1`}>
         <IonImg className={styles.logo} src={maincodeLogo} />
 
         {title && <h1 className={styles.title}>{title}</h1>}

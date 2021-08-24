@@ -1,7 +1,7 @@
-import styles from './assignment-two.module.css';
+import styles from './x-plus-ten-code.module.css';
 import CodeEditor from '../../../code/editor/CodeEditor';
 
-const AssignmentTwo: React.FC = () => {
+const XPlusTenCode: React.FC = () => {
   const codeSnippetInput = `
   funktion erPunktetGyldigt(x, y) { 
      hvis ( <span class="letter-space">@(______)@</span>) {
@@ -20,4 +20,4 @@ const AssignmentTwo: React.FC = () => {
     </div>
   );
 };
-export default AssignmentTwo;
+export default XPlusTenCode;

@@ -2,7 +2,7 @@ import styles from './assignment.module.css';
 import LineChart from '../../../line-chart/LineChart';
 import CodeEditor from '../../../code/editor/CodeEditor';
 
-const Assignment: React.FC = () => {
+const XPlusTen: React.FC = () => {
   const codeSnippetInput = `
     f(x) = <span class="letter-space">@(___)@</span>`;
 
@@ -21,4 +21,4 @@ const Assignment: React.FC = () => {
     </div>
   );
 };
-export default Assignment;
+export default XPlusTen;

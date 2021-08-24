@@ -5,9 +5,6 @@ import FullscreenSlide from '../../components/fullscreen-slide/FullscreenSlide';
 import Particles from 'react-particles-js';
 import schoolOptions from '../../lib/particleImagesConfig';
 import adventureOptions from '../../lib/particlesConfig';
-
-import Assignment from '../../components/slides/assignments/assignment/Assignment';
-import AssignmentTwo from '../../components/slides/assignments/assignment-two/AssignmentTwo';
 import slides from './slides';
 
 const slideOpts = {
@@ -40,12 +37,6 @@ const Presentation: React.FC = () => {
               {s.content}
             </FullscreenSlide>
           ))}
-          <FullscreenSlide>
-            <Assignment />
-          </FullscreenSlide>
-          <FullscreenSlide>
-            <AssignmentTwo />
-          </FullscreenSlide>
         </IonSlides>
       </IonContent>
     </IonPage>
