@@ -10,8 +10,8 @@ type ISlide = {
 
 const slides: ISlide[] = [
   {
-    title: 'Velkommen',
-    subtitle: '..',
+    title: 'Vi præsenterer',
+    subtitle: 'Matematik og programmering som spil',
     content: <Welcome />,
   },
   {

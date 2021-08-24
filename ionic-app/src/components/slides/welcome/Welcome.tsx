@@ -1,11 +1,13 @@
 /** Describe the purpose of the Welcome component here.*/
 import SwipeIndicator from '../../swipe-indicator/SwipeIndicator';
+import TeachingImg from '../../../assets/teaching.svg';
+import { IonImg } from '@ionic/react';
+import styles from './welcome.module.css';
 
 const Welcome: React.FC = () => {
   return (
-    <div className="flex flex-col justify-center w-full items-center">
-      <h2>Velkommen til</h2>
-      <SwipeIndicator className="m-2" />
+    <div className="flex flex-col justify-center items-center pt-2">
+      <IonImg className={styles.illustration} src={TeachingImg} />
     </div>
   );
 };
