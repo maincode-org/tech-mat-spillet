@@ -15,12 +15,9 @@ const slides: ISlide[] = [
     content: <Welcome />,
   },
   {
-    title: 'opg1',
-    subtitle: 'dd',
     content: <XPlusTen />,
   },
   {
-    title: 'Kodning af funktionen',
     content: <XPlusTenCode />,
   },
 ];
