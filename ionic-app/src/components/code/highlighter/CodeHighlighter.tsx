@@ -43,13 +43,12 @@ const highlights: IHighlight[] = [
 ];
 
 const highlight = (s: string): string => {
+  s = s.replace(/@\(/g, '').replace(/\)@/g, '');
+
   const functionNameRegex = new RegExp('(\\sfunktion\\s[a-zA-Z]+)', 'gi');
   const functionNameExecResult = functionNameRegex.exec(s);
   const functionName = functionNameExecResult?.[0].split(' ')[2];
-  console.log(functionName);
-  if (functionName) {
-    s = s.replace(functionName, `<span class="${EHighlight.ASSIGNMENT}">${functionName}</span>`);
-  }
+  if (functionName) s = s.replace(functionName, `<span class="${EHighlight.ASSIGNMENT}">${functionName}</span>`);
 
   highlights.forEach((h) => (s = s.replace(new RegExp(h.keyword, 'gi'), `<span class="${h.className}">${h.keyword}</span>`)));
   return s;
@@ -61,6 +60,6 @@ type IProps = {
 };
 
 const CodeHighlighter: React.FC<IProps> = ({ code, className }) => {
-  return <pre className={`${className} ${styles.code} m-0 mb-2 text-left`}>{parse(highlight(code))}</pre>;
+  return <pre className={`${className} ${styles.code} m-0 pb-1 text-left`}>{parse(highlight(code))}</pre>;
 };
 export default CodeHighlighter;
