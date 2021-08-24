@@ -25,7 +25,7 @@ const Welcome: React.FC = () => {
         </div>
 
         <IonSlides className={styles.slider} options={slideOpts} onIonSlideDidChange={scrollToTop}>
-          <FullscreenSlide className={styles.slide}>
+          <FullscreenSlide className={styles.slide} title="Maincode præsenterer">
             <div className="flex flex-col justify-center w-full items-center">
               <h2>Velkommen til</h2>
               <SwipeIndicator className="m-2" />
