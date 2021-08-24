@@ -1,19 +1,9 @@
+.container {
+  overflow-y: scroll;
+}
+
 .questionContainer {
   border: 2px solid black;
-  max-width: 50%;
+  max-width: 40%;
   padding: 1rem;
-}
-.functionBuilderContainer {
-  border: 2px solid black;
-}
-.vl {
-  height: 100%;
-  border-left: 2px solid black;
-}
-.selectBorder {
-  border: 2px solid black;
-  padding: 0.8rem 1rem 0.8rem 1rem;
-}
-input {
-  max-width: 55px;
 }

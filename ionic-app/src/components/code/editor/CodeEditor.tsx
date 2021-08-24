@@ -7,16 +7,18 @@ type IProps = {
   codeSnippet: string;
   options: string[];
   correctAnswer: string;
+  onChange?: (s: string) => void;
   className?: string;
 };
 
-const CodeEditor: React.FC<IProps> = ({ codeSnippet, options, correctAnswer, className }) => {
+const CodeEditor: React.FC<IProps> = ({ codeSnippet, options, correctAnswer, onChange, className }) => {
   const [chosenAnswer, setChosenAnswer] = useState<string[]>(correctAnswer.split('').map(() => '_'));
   const [code, setCode] = useState(codeSnippet);
 
   useEffect(() => {
     const newCode = code.replace(/@(.*)@/g, `@(${chosenAnswer.reduce((acc, cur) => acc + cur, '')})@`);
     setCode(newCode);
+    onChange && onChange(chosenAnswer.toString().replace(/,/g, '').replace(/_/g, ''));
   }, [chosenAnswer, setCode]);
 
   const onClickHandler = (char: string) => {
@@ -44,11 +46,11 @@ const CodeEditor: React.FC<IProps> = ({ codeSnippet, options, correctAnswer, cla
           <span className="w-full h-full">{chosenAnswer.reduce((acc, cur) => acc + cur, '') === correctAnswer ? '✓' : '🗙'}</span>
         </div>
       )}
-      <div className={`${styles.codeContainer} card-shadow rounded`}>
+      <div className={`${styles.codeContainer} pb-1 card-shadow rounded`}>
         <CodeHighlighter code={code} />
       </div>
 
-      <div className="py-1 px-2 mt-3 glass-bg rounded">
+      <div className="py-1 px-2 mt-1 glass-bg rounded">
         {options.map((o, i) => (
           <IonChip key={i} color="primary" onClick={() => onClickHandler(o)}>
             <IonLabel>{o}</IonLabel>

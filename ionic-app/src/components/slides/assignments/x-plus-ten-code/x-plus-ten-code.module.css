@@ -1,3 +1,6 @@
+.container {
+  overflow-y: scroll;
+}
 .questionContainer {
   border: 2px solid black;
   max-width: 50%;

@@ -12,7 +12,7 @@ const XPlusTenCode: React.FC = () => {
   }`;
 
   return (
-    <div className="p-1 w-full h-full flex flex-col items-center rounded">
+    <div className={`${styles.container} p-1 w-full h-full flex flex-col items-center rounded`}>
       <div className={`${styles.questionContainer} rounded`}>
         <h4> Konstruer en funktion som tager to parametre x og y, som returnerer hvorvidt koordinatet (x,y) er et validt punkt på grafen fra før f(x)=x+10. </h4>
       </div>
