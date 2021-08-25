@@ -1,16 +1,16 @@
 .codePicture {
-    width: 15vw;
+  width: 15vw;
 }
 .codePicture::part(image) {
-    border-radius: 12px;
+  border-radius: 12px;
 }
 .rightArrowContainer {
-    display: inline-block;
-    height: 100%;
+  display: inline-block;
+  height: 100%;
 }
 .rightArrow {
-    color: rgba(20, 20, 20, 0.9);
-    font-size: 4rem;
-    margin-bottom: 0;
-    margin-top: 0;
+  color: rgba(20, 20, 20, 0.9);
+  font-size: 4rem;
+  margin-bottom: 0;
+  margin-top: 0;
 }
