@@ -18,7 +18,7 @@ import Constallations from '../../components/slides/constallations/Constallation
 import ITUImage from '../../assets/ITU.jpg';
 import fruitNinja from '../../assets/fruitNinja.jpg';
 import codingPirates from '../../assets/coding_pirates.png';
-import rpgCharacters from '../../assets/rpgcharacters.jpg';
+import rpgCharacters from '../../assets/rpg.png';
 
 type ISlide = {
   title?: string;
