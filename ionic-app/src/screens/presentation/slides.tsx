@@ -19,7 +19,7 @@ import ITUImage from '../../assets/ITU.jpg';
 import fruitNinja from '../../assets/fruitNinja.jpg';
 import codingPirates from '../../assets/coding_pirates.png';
 import rpgCharacters from '../../assets/rpg.png';
-import leaderBoard from '../../assets/leader-board.jpg';
+import treasureChest from '../../assets/rpgchest.png';
 import campaigns from '../../assets/campaigns.jpg';
 import ContactInfo from '../../components/slides/contact-info/ContactInfo';
 
@@ -106,6 +106,10 @@ const slides: ISlide[] = [
   {
     title: 'Temaet er "eventyr" - noget de kender rigtig godt',
     subtitle: 'Klassen har et hold, men eleverne spiller deres egen karakter',
+    backgroundImage: {
+      src: treasureChest,
+      opacity: 0.8,
+    },
     content: <ThemeAndStructure />,
   },
   {
