@@ -2,11 +2,8 @@ import AutocenteredBullets from '../../autocentered-bullets/AutocenteredBullets'
 import { IonImg } from '@ionic/react';
 import rankingImg from '../../../assets/leader-board.jpg';
 import styles from './class-ranking.module.css';
-type IProps = {
-  className?: string;
-};
 
-const ClassRanking: React.FC<IProps> = ({ className }) => {
+const ClassRanking: React.FC = () => {
   return (
     <div className="h-full flex">
       <AutocenteredBullets>

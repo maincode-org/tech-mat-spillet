@@ -108,7 +108,7 @@ const slides: ISlide[] = [
     subtitle: 'Klassen har et hold, men eleverne spiller deres egen karakter',
     backgroundImage: {
       src: treasureChest,
-      opacity: 0.8,
+      opacity: 0.5,
     },
     content: <ThemeAndStructure />,
   },

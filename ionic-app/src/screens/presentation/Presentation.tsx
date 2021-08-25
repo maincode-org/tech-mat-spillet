@@ -4,7 +4,7 @@ import styles from './presentation.module.css';
 import FullscreenSlide from '../../components/fullscreen-slide/FullscreenSlide';
 import Particles from 'react-particles-js';
 import schoolOptions from '../../lib/particleImagesConfig';
-import adventureOptions from '../../lib/particlesConfig';
+import adventureOptions from '../../lib/particleRPGImagesConfig';
 import slides from './slides';
 
 const slideOpts = {
