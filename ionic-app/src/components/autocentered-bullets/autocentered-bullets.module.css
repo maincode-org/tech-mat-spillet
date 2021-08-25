@@ -1,12 +1,12 @@
 .container {
-    width: -moz-fit-content;
-    width: fit-content;
-    margin: auto;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
 }
 
 .container h3 {
-    display: inline-block;
-    width: -moz-fit-content;
-    width: fit-content;
-    margin-bottom: 40px;
+  display: inline-block;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-bottom: 40px;
 }
