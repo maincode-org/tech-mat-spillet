@@ -15,11 +15,16 @@ import MiniGames from '../../components/slides/mini-games/MiniGames';
 import ClassRanking from '../../components/slides/class-ranking/ClassRanking';
 import TeamingUp from '../../components/slides/teaming-up/TeamingUp';
 import Constallations from '../../components/slides/constallations/Constallations';
+import ITUImage from '../../assets/ITU.jpg';
 
 type ISlide = {
   title?: string;
   subtitle?: string;
   content: JSX.Element;
+  backgroundImage?: {
+    src: string;
+    opacity?: number;
+  };
 };
 
 const slides: ISlide[] = [
@@ -35,6 +40,10 @@ const slides: ISlide[] = [
   },
   {
     title: 'Vores baggrund',
+    backgroundImage: {
+      src: ITUImage,
+      opacity: 0.25,
+    },
     content: <OurBackground />,
   },
   {

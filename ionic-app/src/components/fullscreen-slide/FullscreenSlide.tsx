@@ -9,12 +9,18 @@ type IProps = {
   subtitle?: string | JSX.Element;
   progressIndicator?: string | JSX.Element;
   className?: string;
+  backgroundImage?: {
+    src: string;
+    opacity?: number;
+  };
 };
 
-const FullscreenSlide: React.FC<IProps> = ({ title, subtitle, progressIndicator, className, children }) => {
+const FullscreenSlide: React.FC<IProps> = ({ title, subtitle, progressIndicator, className, backgroundImage, children }) => {
   return (
     <IonSlide className={className ?? ''}>
       <div className={`${styles.paper} glass-bg rounded card-shadow pt-1`}>
+        <div className={styles.background} style={backgroundImage ? { backgroundImage: `url('${backgroundImage.src}')`, opacity: backgroundImage.opacity ?? 0.25 } : undefined} />
+
         <IonImg className={styles.logo} src={maincodeLogo} />
         <SwipeIndicator className={styles.swipeIndicator} />
 
