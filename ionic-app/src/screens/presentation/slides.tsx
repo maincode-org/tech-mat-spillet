@@ -16,7 +16,7 @@ import ClassRanking from '../../components/slides/class-ranking/ClassRanking';
 import TeamingUp from '../../components/slides/teaming-up/TeamingUp';
 import Constallations from '../../components/slides/constallations/Constallations';
 import ITUImage from '../../assets/ITU.jpg';
-import fruitNinja from '../../assets/fruitNinja.jpg';
+import mario from '../../assets/mario.jpg';
 import codingPirates from '../../assets/coding_pirates.png';
 import rpgCharacters from '../../assets/rpg.png';
 import treasureChest from '../../assets/rpgchest.png';
@@ -125,11 +125,11 @@ const slides: ISlide[] = [
     content: <ClassRanking />,
   },
   {
-    title: 'Bibehold lysten og koncentrationen med små MiniGames',
+    title: 'Bibehold motivationen og koncentrationen med små MiniGames',
     subtitle: 'Giver eleven en lille pause - ca. 2 min for hver 20 minutters opgaver',
     backgroundImage: {
-      src: fruitNinja,
-      opacity: 0.4,
+      src: mario,
+      opacity: 0.3,
     },
     content: <MiniGames />,
   },
