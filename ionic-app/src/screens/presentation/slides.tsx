@@ -49,7 +49,7 @@ const slides: ISlide[] = [
   },
   {
     title: 'Konstruer en funktion',
-    subtitle: 'som er ens med lilla streg',
+    subtitle: 'som er ens med den blå streg',
     content: <XPlusTen />,
   },
   {
@@ -58,7 +58,7 @@ const slides: ISlide[] = [
     content: <XPlusTenCode />,
   },
   {
-    title: 'Kampagner indenfor hvert emne',
+    title: 'Kampagner inden for hvert emne',
     subtitle: 'Opdelt i matematik pensum',
     content: <ContentCampaigns />,
   },
@@ -69,12 +69,12 @@ const slides: ISlide[] = [
   },
   {
     title: 'Det sjove: Gamification elementer',
-    subtitle: 'En underholdende oplevelse, der vækker interesse og spænding',
+    subtitle: 'En underholdende oplevelse der vækker interesse og spænding',
     content: <GamificationPurpose />,
   },
   {
     title: "Inspireret af Coding Pirates' tematik",
-    subtitle: 'De har kæmpe succes med at gøre læring spændende før børn',
+    subtitle: 'De har kæmpe succes med at gøre læring spændende for børn',
     content: <InspirationCodingPirates />,
   },
   {
@@ -88,11 +88,11 @@ const slides: ISlide[] = [
   },
   {
     title: 'Din klasse dyster i at optjene flest fælles point',
-    subtitle: 'Modstanderen er parralelklassen\nDe bedste kommer på landsomspændende rangliste',
+    subtitle: 'Modstanderen er parralelklassen\nDe bedste kommer på den landsomspændende rangliste',
     content: <ClassRanking />,
   },
   {
-    title: 'Bibehold lysten og energien med små MiniGames',
+    title: 'Bibehold lysten og koncentrationen med små MiniGames',
     subtitle: 'Giver eleven en lille pause - ca. 2 min for hver 20 minutters opgaver',
     content: <MiniGames />,
   },
@@ -107,5 +107,4 @@ const slides: ISlide[] = [
     content: <Constallations />,
   },
 ];
-
 export default slides;
