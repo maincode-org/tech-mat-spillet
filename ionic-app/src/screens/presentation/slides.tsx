@@ -38,6 +38,7 @@ const slides: ISlide[] = [
     content: <ContentPurpose />,
   },
   {
+    title: 'Konstruer en funktion der er ens med den lilla streg',
     content: <XPlusTen />,
   },
   {

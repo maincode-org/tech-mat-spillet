@@ -13,10 +13,6 @@ const XPlusTen: React.FC = () => {
 
   return (
     <div className={`${styles.container} p-1 w-full h-full items-center`}>
-      <div className={`${styles.questionContainer} m-auto rounded`}>
-        <h4> Konstruer et funktionsudtryk hvor alle funktionens y-værdierne er større end 10. </h4>
-      </div>
-
       <IonGrid>
         <IonRow>
           <IonCol size="3">

@@ -14,18 +14,18 @@ const LineChart: React.FC<IProps> = ({ dataPoints, graphTitle, className }) => {
     labels: ['1', '2', '3', '4', '5', '6'],
     datasets: [
       {
-        label: 'f(x)=x+10',
-        data: [11, 12, 13, 14, 15, 16],
-        fill: false,
-        backgroundColor: 'rgb(148,16,126)',
-        borderColor: 'rgba(9,67,131,0.2)',
-      },
-      {
         label: 'Din funktion',
         data: dataPoints,
         fill: false,
         backgroundColor: 'rgb(255,187,99)',
         borderColor: 'rgba(178,187,9,0.2)',
+      },
+      {
+        label: 'Målet',
+        data: [11, 12, 13, 14, 15, 16],
+        fill: false,
+        backgroundColor: 'rgb(148,16,126)',
+        borderColor: 'rgba(9,67,131,0.2)',
       },
     ],
   };
