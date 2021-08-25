@@ -48,10 +48,13 @@ const slides: ISlide[] = [
     content: <ContentPurpose className="mt-3" />,
   },
   {
-    title: 'Konstruer en funktion der er ens med den lilla streg',
+    title: 'Konstruer en funktion',
+    subtitle: 'som er ens med lilla streg',
     content: <XPlusTen />,
   },
   {
+    title: 'Programmér en funktion',
+    subtitle: 'som fortæller hvorvidt koordinatet (x,y) er et gyldigt punkt på grafen f(x)=x+10 fra før',
     content: <XPlusTenCode />,
   },
   {
@@ -80,7 +83,7 @@ const slides: ISlide[] = [
     content: <ThemeAndStructure />,
   },
   {
-    title: 'Den enkelte karakters udvikling',
+    title: "Den enkelte karakter's udvikling",
     content: <CharacterDevelopment />,
   },
   {
@@ -99,7 +102,8 @@ const slides: ISlide[] = [
     content: <TeamingUp />,
   },
   {
-    title: 'Konstellationer',
+    title: 'Samarbejdskonstellationer',
+    subtitle: 'Leverandøraftale\n\nSamarbejde - vi udvikler gratis - vi ejer - på jeres platform\n\nKonsulent\n\nAndet?',
     content: <Constallations />,
   },
 ];
