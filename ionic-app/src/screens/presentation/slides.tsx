@@ -100,14 +100,14 @@ const slides: ISlide[] = [
   {
     title: 'Temaet er "eventyr" - noget de kender rigtig godt',
     subtitle: 'Klassen har et hold, men eleverne spiller deres egen karakter',
-    backgroundImage: {
-      src: rpgCharacters,
-      opacity: 0.2,
-    },
     content: <ThemeAndStructure />,
   },
   {
     title: "Den enkelte karakter's udvikling",
+    backgroundImage: {
+      src: rpgCharacters,
+      opacity: 0.2,
+    },
     content: <CharacterDevelopment />,
   },
   {
