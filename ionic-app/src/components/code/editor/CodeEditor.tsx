@@ -43,7 +43,7 @@ const CodeEditor: React.FC<IProps> = ({ codeSnippet, options, correctAnswer, onC
     <div className={className}>
       {chosenAnswer.toString().replace(/,/g, '').replace(/_/g, '').length === correctAnswer.length && (
         <div className={styles.correctAnswerContainer}>
-          <span className="w-full h-full">{chosenAnswer.reduce((acc, cur) => acc + cur, '') === correctAnswer ? '✓' : '🗙'}</span>
+          <span className="w-full h-full">{chosenAnswer.reduce((acc, cur) => acc + cur, '') === correctAnswer ? '✓' : '!'}</span>
         </div>
       )}
       <div className={`${styles.codeContainer} pb-1 card-shadow rounded`}>
