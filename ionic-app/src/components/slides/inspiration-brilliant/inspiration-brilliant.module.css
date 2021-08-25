@@ -1,5 +1,5 @@
 .gif {
-    width: 15vw;
+    width: 18vw;
 }
 .gif::part(image) {
     border-radius: 12px;

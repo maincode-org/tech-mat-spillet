@@ -8,7 +8,7 @@ type IProps = {
 
 const InspirationBrilliant: React.FC<IProps> = ({ className }) => {
   return (
-    <div className={`${className} flex flex-col items-center mt-3`}>
+    <div className={`${className} flex flex-col items-center mt-2`}>
       <div className="card-shadow rounded">
         <IonImg className={styles.gif} src={brilliantGif} />
       </div>

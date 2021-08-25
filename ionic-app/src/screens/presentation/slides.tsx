@@ -16,7 +16,9 @@ import ClassRanking from '../../components/slides/class-ranking/ClassRanking';
 import TeamingUp from '../../components/slides/teaming-up/TeamingUp';
 import Constallations from '../../components/slides/constallations/Constallations';
 import ITUImage from '../../assets/ITU.jpg';
-import fruitNinja from '../../assets/fruit-ninja.jpg';
+import fruitNinja from '../../assets/fruitNinja.jpg';
+import codingPirates from '../../assets/coding_pirates.png';
+import rpgCharacters from '../../assets/rpgcharacters.jpg';
 
 type ISlide = {
   title?: string;
@@ -88,11 +90,19 @@ const slides: ISlide[] = [
   {
     title: "Inspireret af Coding Pirates' tematik",
     subtitle: 'De har kæmpe succes med at gøre læring spændende for børn',
+    backgroundImage: {
+      src: codingPirates,
+      opacity: 0.6,
+    },
     content: <InspirationCodingPirates />,
   },
   {
     title: 'Temaet er "eventyr" - noget de kender rigtig godt',
     subtitle: 'Klassen har et hold, men eleverne spiller deres egen karakter',
+    backgroundImage: {
+      src: rpgCharacters,
+      opacity: 0.2,
+    },
     content: <ThemeAndStructure />,
   },
   {
