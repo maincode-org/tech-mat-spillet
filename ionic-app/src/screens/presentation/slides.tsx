@@ -117,11 +117,6 @@ const slides: ISlide[] = [
   },
   {
     title: 'Din klasse dyster i at optjene flest fælles point',
-    subtitle: 'Modstanderen er parralelklassen\nDe bedste kommer på den landsomspændende rangliste',
-    backgroundImage: {
-      src: leaderBoard,
-      opacity: 0.4,
-    },
     content: <ClassRanking />,
   },
   {
