@@ -2,11 +2,14 @@
   width: -moz-fit-content;
   width: fit-content;
   margin: auto;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 .container h3 {
   display: inline-block;
   width: -moz-fit-content;
   width: fit-content;
+  word-wrap: break-word;
   margin-bottom: 40px;
 }
