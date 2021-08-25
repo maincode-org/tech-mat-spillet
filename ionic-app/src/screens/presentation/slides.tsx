@@ -21,6 +21,7 @@ import codingPirates from '../../assets/coding_pirates.png';
 import rpgCharacters from '../../assets/rpg.png';
 import leaderBoard from '../../assets/leader-board.jpg';
 import campaigns from '../../assets/campaigns.jpg';
+import ContactInfo from '../../components/slides/contact-info/ContactInfo';
 
 type ISlide = {
   title?: string;
@@ -136,6 +137,10 @@ const slides: ISlide[] = [
   {
     title: 'Samarbejdskonstellationer',
     content: <Constallations />,
+  },
+  {
+    title: 'Fang os på',
+    content: <ContactInfo />,
   },
 ];
 export default slides;
