@@ -16,6 +16,7 @@ import ClassRanking from '../../components/slides/class-ranking/ClassRanking';
 import TeamingUp from '../../components/slides/teaming-up/TeamingUp';
 import Constallations from '../../components/slides/constallations/Constallations';
 import ITUImage from '../../assets/ITU.jpg';
+import fruitNinja from '../../assets/fruit-ninja.jpg';
 
 type ISlide = {
   title?: string;
@@ -103,6 +104,10 @@ const slides: ISlide[] = [
   {
     title: 'Bibehold lysten og koncentrationen med små MiniGames',
     subtitle: 'Giver eleven en lille pause - ca. 2 min for hver 20 minutters opgaver',
+    backgroundImage: {
+      src: fruitNinja,
+      opacity: 0.4,
+    },
     content: <MiniGames />,
   },
   {
@@ -112,7 +117,6 @@ const slides: ISlide[] = [
   },
   {
     title: 'Samarbejdskonstellationer',
-    subtitle: 'Leverandøraftale\n\nSamarbejde - vi udvikler gratis - vi ejer - på jeres platform\n\nKonsulent\n\nAndet?',
     content: <Constallations />,
   },
 ];
