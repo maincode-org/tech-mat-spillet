@@ -7,7 +7,7 @@ const ClassRanking: React.FC = () => {
   return (
     <div className="h-full flex">
       <AutocenteredBullets>
-        <h3>{'>'} Modstanderen er parralelklassen</h3>
+        <h3>{'>'} Modstanderen er parallelklassen</h3>
         <h3>{'>'} De bedste hold kommer på den landsomspændende rangliste</h3>
       </AutocenteredBullets>
       <IonImg src={rankingImg} className={`${styles.img} pr-2`} />
