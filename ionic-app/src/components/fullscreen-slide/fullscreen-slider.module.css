@@ -5,11 +5,11 @@
 }
 
 .title,
-.subtitle {
+.subtitle, .paper h1, .paper h2, .paper h3 {
   letter-spacing: 0.1rem;
 }
 
-.subtitle {
+.subtitle, .paper h2, .paper h3 {
   color: rgba(90, 90, 90, 1);
 }
 

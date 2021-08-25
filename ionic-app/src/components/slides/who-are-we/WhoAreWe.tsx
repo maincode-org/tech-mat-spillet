@@ -9,7 +9,7 @@ type IProps = {
 
 const WhoAreWe: React.FC<IProps> = ({ className }) => {
   return (
-    <div className={`${className} flex flex-column justify-center mt-4 ml-4 h-full`}>
+    <div className={`${className} flex justify-center mt-4 ml-4 h-full`}>
       <IonImg className={`${styles.photo} rounded box-shadow mr-3`} alt="Os" src={photo} />
       <IonImg className={styles.robot} alt="Robot" src={robot} />
     </div>
