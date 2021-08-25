@@ -1,8 +1,11 @@
 .container {
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 .questionContainer {
   border: 2px solid black;
-  max-width: 50%;
+  max-width: 40vw;
   padding: 1rem;
+}
+.codeEditorContainer {
+  max-width: 40vw;
 }
