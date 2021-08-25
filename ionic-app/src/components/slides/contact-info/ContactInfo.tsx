@@ -12,7 +12,7 @@ const ContactInfo: React.FC<IProps> = ({ className }) => {
       <IonGrid>
         <IonRow>
           <IonCol size="4">
-            <div className="flex flex-col justify-center items-center">
+            <div className="h-full flex flex-col justify-center items-center">
               <h3>Mail</h3>
               <p>mhn@maincode.dk</p>
               <p>mark@maincode.dk</p>
@@ -24,7 +24,7 @@ const ContactInfo: React.FC<IProps> = ({ className }) => {
             </div>
           </IonCol>
           <IonCol size="4">
-            <div className="flex flex-col justify-center items-center">
+            <div className="h-full flex flex-col justify-center items-center">
               <h3>Telefon</h3>
               <p className="text-left">28 57 21 87</p>
               <p className="text-left">42 33 42 56</p>
