@@ -20,6 +20,7 @@ import fruitNinja from '../../assets/fruitNinja.jpg';
 import codingPirates from '../../assets/coding_pirates.png';
 import rpgCharacters from '../../assets/rpg.png';
 import leaderBoard from '../../assets/leader-board.jpg';
+import campaigns from '../../assets/campaigns.jpg';
 
 type ISlide = {
   title?: string;
@@ -79,12 +80,12 @@ const slides: ISlide[] = [
     content: <InspirationBrilliant />,
   },
   {
-    title: 'Det sjove: Gamification elementer',
+    title: 'Den sjove del: Gamification elementer',
     subtitle: 'En underholdende oplevelse der vækker interesse og spænding',
     content: <GamificationPurpose />,
   },
   {
-    title: "Inspireret af Coding Pirates' tematik",
+    title: 'Inspireret af Coding Pirates oplevelsen',
     subtitle: 'De har kæmpe succes med at gøre læring spændende for børn',
     backgroundImage: {
       src: codingPirates,
@@ -95,6 +96,10 @@ const slides: ISlide[] = [
   {
     title: 'Hvert undervisningsforløb bliver en spilkampagne',
     subtitle: 'Opdelt i pensumemner fra matematik',
+    backgroundImage: {
+      src: campaigns,
+      opacity: 0.7,
+    },
     content: <ContentCampaigns />,
   },
   {

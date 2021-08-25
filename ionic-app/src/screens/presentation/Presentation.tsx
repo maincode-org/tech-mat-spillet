@@ -16,7 +16,7 @@ const Presentation: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const ionContentRef = useRef<HTMLIonContentElement>(null);
   const ionSlidesRef = useRef<HTMLIonSlidesElement>(null);
-  const adventureModeIndex = 1;
+  const adventureModeIndex = 10;
 
   const handleSlideChange = async (): Promise<void> => {
     ionContentRef.current && ionContentRef?.current.scrollToTop(200); // Scroll to top
