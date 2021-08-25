@@ -19,6 +19,7 @@ import ITUImage from '../../assets/ITU.jpg';
 import fruitNinja from '../../assets/fruitNinja.jpg';
 import codingPirates from '../../assets/coding_pirates.png';
 import rpgCharacters from '../../assets/rpgcharacters.jpg';
+import leaderBoard from '../../assets/leader-board.jpg';
 
 type ISlide = {
   title?: string;
@@ -112,6 +113,10 @@ const slides: ISlide[] = [
   {
     title: 'Din klasse dyster i at optjene flest fælles point',
     subtitle: 'Modstanderen er parralelklassen\nDe bedste kommer på den landsomspændende rangliste',
+    backgroundImage: {
+      src: leaderBoard,
+      opacity: 0.4,
+    },
     content: <ClassRanking />,
   },
   {
