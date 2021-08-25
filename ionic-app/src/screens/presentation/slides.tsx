@@ -19,6 +19,7 @@ import ITUImage from '../../assets/ITU.jpg';
 import fruitNinja from '../../assets/fruitNinja.jpg';
 import codingPirates from '../../assets/coding_pirates.png';
 import rpgCharacters from '../../assets/rpg.png';
+import leaderBoard from '../../assets/leader-board.jpg';
 
 type ISlide = {
   title?: string;
@@ -99,19 +100,23 @@ const slides: ISlide[] = [
   {
     title: 'Temaet er "eventyr" - noget de kender rigtig godt',
     subtitle: 'Klassen har et hold, men eleverne spiller deres egen karakter',
-    backgroundImage: {
-      src: rpgCharacters,
-      opacity: 0.2,
-    },
     content: <ThemeAndStructure />,
   },
   {
     title: "Den enkelte karakter's udvikling",
+    backgroundImage: {
+      src: rpgCharacters,
+      opacity: 0.2,
+    },
     content: <CharacterDevelopment />,
   },
   {
     title: 'Din klasse dyster i at optjene flest fælles point',
     subtitle: 'Modstanderen er parralelklassen\nDe bedste kommer på den landsomspændende rangliste',
+    backgroundImage: {
+      src: leaderBoard,
+      opacity: 0.4,
+    },
     content: <ClassRanking />,
   },
   {
