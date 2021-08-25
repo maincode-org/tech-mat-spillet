@@ -983,6 +983,10 @@
   align-items: flex-end;
 }
 
+.items-stretch {
+  align-items: stretch;
+}
+
 .self-center {
   justify-self: center;
 }

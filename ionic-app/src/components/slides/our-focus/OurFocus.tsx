@@ -1,5 +1,4 @@
 import styles from './our-focus.module.css';
-/** Describe the purpose of the OurFocus component here.*/
 
 type IProps = {
   className?: string;

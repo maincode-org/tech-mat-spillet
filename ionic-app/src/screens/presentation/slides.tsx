@@ -44,8 +44,8 @@ const slides: ISlide[] = [
   },
   {
     title: 'Idéen: Samspil mellem matematik og programmering',
-    subtitle: 'Ikke abstrakt, men praktisk og virkelighedsnært\n\n\nDe lærer på dansk, men koden kan auto-oversættes til Node.js',
-    content: <ContentPurpose />,
+    subtitle: 'Ikke abstrakt, men praktisk og virkelighedsnært\n\n\n\n\nDe lærer på dansk, men koden kan auto-oversættes til Node.js',
+    content: <ContentPurpose className="mt-3" />,
   },
   {
     title: 'Konstruer en funktion der er ens med den lilla streg',
