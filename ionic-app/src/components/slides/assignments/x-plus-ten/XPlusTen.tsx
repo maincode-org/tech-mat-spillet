@@ -3,6 +3,7 @@ import LineChart from '../../../line-chart/LineChart';
 import CodeEditor from '../../../code/editor/CodeEditor';
 import { useState } from 'react';
 import { IonGrid, IonRow, IonCol } from '@ionic/react';
+import { evaluateCodeInput } from '../../../../lib/mathEval';
 
 const XPlusTen: React.FC = () => {
   const [userInput, setUserInput] = useState('');
@@ -10,14 +11,8 @@ const XPlusTen: React.FC = () => {
   const codeSnippetInput = `
     f(x) = <span class="letter-space">@(____)@</span>`;
 
-  console.log('user input: ', userInput);
-
   return (
     <div className={`${styles.container} p-1 w-full h-full items-center`}>
-      <div className={`${styles.questionContainer} m-auto rounded`}>
-        <h4> Konstruer et funktionsudtryk hvor alle funktionens y-værdierne er større end 10. </h4>
-      </div>
-
       <IonGrid>
         <IonRow>
           <IonCol size="3">
@@ -33,8 +28,7 @@ const XPlusTen: React.FC = () => {
             <div />
           </IonCol>
           <IonCol>
-            {/* Calculate the y-values and provide them to dataPoints here */}
-            <LineChart dataPoints={[]} graphTitle={`f(x)=${userInput}`} className="mt-1" />
+            <LineChart dataPoints={evaluateCodeInput([1, 2, 3, 4, 5, 6], userInput)} graphTitle={`f(x)=${userInput}`} className="mt-1" />
           </IonCol>
         </IonRow>
       </IonGrid>
