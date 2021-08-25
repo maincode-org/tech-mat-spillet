@@ -73,11 +73,6 @@ const slides: ISlide[] = [
     content: <XPlusTenCode />,
   },
   {
-    title: 'Kampagner inden for hvert emne',
-    subtitle: 'Opdelt i matematik pensum',
-    content: <ContentCampaigns />,
-  },
-  {
     title: 'Inspireret af Brilliant',
     subtitle: 'Vi måler os selv efter deres kvalitetsniveau',
     content: <InspirationBrilliant />,
@@ -95,6 +90,11 @@ const slides: ISlide[] = [
       opacity: 0.6,
     },
     content: <InspirationCodingPirates />,
+  },
+  {
+    title: 'Hvert undervisningsforløb bliver en spilkampagne',
+    subtitle: 'Opdelt i pensumemner fra matematik',
+    content: <ContentCampaigns />,
   },
   {
     title: 'Temaet er "eventyr" - noget de kender rigtig godt',
