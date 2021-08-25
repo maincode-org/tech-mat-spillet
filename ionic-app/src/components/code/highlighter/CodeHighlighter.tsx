@@ -21,7 +21,15 @@ const highlights: IHighlight[] = [
     className: EHighlight.STATEMENT,
   },
   {
+    keyword: 'if',
+    className: EHighlight.STATEMENT,
+  },
+  {
     keyword: 'ellers',
+    className: EHighlight.STATEMENT,
+  },
+  {
+    keyword: 'else',
     className: EHighlight.STATEMENT,
   },
   {
@@ -29,7 +37,15 @@ const highlights: IHighlight[] = [
     className: EHighlight.DECLARATION,
   },
   {
+    keyword: 'function',
+    className: EHighlight.DECLARATION,
+  },
+  {
     keyword: 'bliver det',
+    className: EHighlight.DECLARATION,
+  },
+  {
+    keyword: 'return',
     className: EHighlight.DECLARATION,
   },
   {
@@ -37,7 +53,15 @@ const highlights: IHighlight[] = [
     className: EHighlight.VALUE,
   },
   {
+    keyword: 'true',
+    className: EHighlight.VALUE,
+  },
+  {
     keyword: 'falsk',
+    className: EHighlight.VALUE,
+  },
+  {
+    keyword: 'false',
     className: EHighlight.VALUE,
   },
 ];
@@ -45,7 +69,7 @@ const highlights: IHighlight[] = [
 const highlight = (s: string): string => {
   s = s.replace(/@\(/g, '').replace(/\)@/g, '');
 
-  const functionNameRegex = new RegExp('(\\sfunktion\\s[a-zA-Z]+)', 'gi');
+  const functionNameRegex = new RegExp('(\\sfunktion|function\\s[a-zA-Z]+)', 'gi');
   const functionNameExecResult = functionNameRegex.exec(s);
   const functionName = functionNameExecResult?.[0].split(' ')[2];
   if (functionName) s = s.replace(functionName, `<span class="${EHighlight.ASSIGNMENT}">${functionName}</span>`);
