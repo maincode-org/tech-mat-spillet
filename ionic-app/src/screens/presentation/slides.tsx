@@ -61,7 +61,7 @@ const slides: ISlide[] = [
   },
   {
     title: 'Inspireret af Brilliant',
-    subtitle: 'Vi måler os efter deres kvalitetsniveau',
+    subtitle: 'Vi måler os selv efter deres kvalitetsniveau',
     content: <InspirationBrilliant />,
   },
   {
@@ -70,17 +70,17 @@ const slides: ISlide[] = [
     content: <GamificationPurpose />,
   },
   {
-    title: 'Inspireret af Coding Pirates tematik',
-    subtitle: 'De har kæmpe success med at gøre læring spændende før børn',
+    title: "Inspireret af Coding Pirates' tematik",
+    subtitle: 'De har kæmpe succes med at gøre læring spændende før børn',
     content: <InspirationCodingPirates />,
   },
   {
     title: 'Temaet er "eventyr" - noget de kender rigtig godt',
-    subtitle: 'Klassen har et hold, men eleven spiller sin egen karakter',
+    subtitle: 'Klassen har et hold, men eleverne spiller deres egen karakter',
     content: <ThemeAndStructure />,
   },
   {
-    title: 'Den enkelte karakterens udvikling',
+    title: 'Den enkelte karakters udvikling',
     content: <CharacterDevelopment />,
   },
   {
@@ -95,11 +95,11 @@ const slides: ISlide[] = [
   },
   {
     title: 'Vi ønsker en samarbejdspartner',
-    subtitle: 'Der kan skabe fagligt indhold til vores framework.',
+    subtitle: 'Der kan skabe fagligt indhold til vores framework',
     content: <TeamingUp />,
   },
   {
-    title: 'Konstallationer',
+    title: 'Konstellationer',
     content: <Constallations />,
   },
 ];
