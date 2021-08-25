@@ -1,0 +1,12 @@
+.photo {
+  height: 70%;
+}
+.photo::part(image) {
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.robot {
+  margin-left: 45px;
+  filter: drop-shadow(0px 3px 5px rgba(20, 20, 20, 0.3));
+}
