@@ -48,7 +48,10 @@ const slides: ISlide[] = [
   },
   {
     title: 'Vores fokus',
-    subtitle: 'User Experience - Gamification - Undervisningssituationer',
+    backgroundImage: {
+      src: ITUImage,
+      opacity: 0.25,
+    },
     content: <OurFocus />,
   },
   {
