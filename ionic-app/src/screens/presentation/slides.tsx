@@ -5,6 +5,16 @@ import WhoAreWe from '../../components/slides/who-are-we/WhoAreWe';
 import ContentPurpose from '../../components/slides/content-purpose/ContentPurpose';
 import OurBackground from '../../components/slides/our-background/OurBackground';
 import OurFocus from '../../components/slides/our-focus/OurFocus';
+import ContentCampaigns from '../../components/slides/content-campaigns/ContentCampaigns';
+import InspirationBrilliant from '../../components/slides/inspiration-brilliant/InspirationBrilliant';
+import GamificationPurpose from '../../components/slides/gamification-purpose/GamificationPurpose';
+import InspirationCodingPirates from '../../components/slides/inspiration-coding-pirates/InspirationCodingPirates';
+import ThemeAndStructure from '../../components/slides/theme-and-structure/ThemeAndStructure';
+import CharacterDevelopment from '../../components/slides/character-development/CharacterDevelopment';
+import MiniGames from '../../components/slides/mini-games/MiniGames';
+import ClassRanking from '../../components/slides/class-ranking/ClassRanking';
+import TeamingUp from '../../components/slides/teaming-up/TeamingUp';
+import Constallations from '../../components/slides/constallations/Constallations';
 
 type ISlide = {
   title?: string;
@@ -33,7 +43,7 @@ const slides: ISlide[] = [
     content: <OurFocus />,
   },
   {
-    title: 'Samspil mellem matematik og programmering',
+    title: 'Idéen: Samspil mellem matematik og programmering',
     subtitle: '\nIkke abstrakt, men praktisk og virkelighedsnært\n\n\nDe lærer på dansk, men koden kan auto-oversættes til Node.js',
     content: <ContentPurpose />,
   },
@@ -42,6 +52,54 @@ const slides: ISlide[] = [
   },
   {
     content: <XPlusTenCode />,
+  },
+  {
+    title: 'Kampagner indenfor hvert emne',
+    subtitle: 'Opdelt i matematik pensum',
+    content: <ContentCampaigns />,
+  },
+  {
+    title: 'Inspireret af Brilliant',
+    subtitle: 'Vi måler os efter deres kvalitetsniveau',
+    content: <InspirationBrilliant />,
+  },
+  {
+    title: 'Det sjove: Gamification elementer',
+    subtitle: 'En underholdende oplevelse, der vækker interesse og spænding',
+    content: <GamificationPurpose />,
+  },
+  {
+    title: 'Inspireret af Coding Pirates tematik',
+    subtitle: 'De har kæmpe success med at gøre læring spændende før børn',
+    content: <InspirationCodingPirates />,
+  },
+  {
+    title: 'Temaet er "eventyr" - noget de kender rigtig godt',
+    subtitle: 'Klassen har et hold, men eleven spiller sin egen karakter',
+    content: <ThemeAndStructure />,
+  },
+  {
+    title: 'Den enkelte karakterens udvikling',
+    content: <CharacterDevelopment />,
+  },
+  {
+    title: 'Din klasse dyster i at optjene flest fælles point',
+    subtitle: 'Modstanderen er parralelklassen\nDe bedste kommer på landsomspændende rangliste',
+    content: <ClassRanking />,
+  },
+  {
+    title: 'Bibehold lysten og energien med små MiniGames',
+    subtitle: 'Giver eleven en lille pause - ca. 2 min for hver 20 minutters opgaver',
+    content: <MiniGames />,
+  },
+  {
+    title: 'Vi ønsker en samarbejdspartner',
+    subtitle: 'Der kan skabe fagligt indhold til vores framework.',
+    content: <TeamingUp />,
+  },
+  {
+    title: 'Konstallationer',
+    content: <Constallations />,
   },
 ];
 
