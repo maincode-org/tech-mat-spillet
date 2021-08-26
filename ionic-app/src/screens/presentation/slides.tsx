@@ -5,23 +5,15 @@ import WhoAreWe from '../../components/slides/who-are-we/WhoAreWe';
 import ContentPurpose from '../../components/slides/content-purpose/ContentPurpose';
 import OurBackground from '../../components/slides/our-background/OurBackground';
 import OurFocus from '../../components/slides/our-focus/OurFocus';
-import ContentCampaigns from '../../components/slides/content-campaigns/ContentCampaigns';
 import InspirationBrilliant from '../../components/slides/inspiration-brilliant/InspirationBrilliant';
 import GamificationPurpose from '../../components/slides/gamification-purpose/GamificationPurpose';
 import InspirationCodingPirates from '../../components/slides/inspiration-coding-pirates/InspirationCodingPirates';
-import ThemeAndStructure from '../../components/slides/theme-and-structure/ThemeAndStructure';
-import CharacterDevelopment from '../../components/slides/character-development/CharacterDevelopment';
-import MiniGames from '../../components/slides/mini-games/MiniGames';
-import ClassRanking from '../../components/slides/class-ranking/ClassRanking';
 import TeamingUp from '../../components/slides/teaming-up/TeamingUp';
-import Constallations from '../../components/slides/constallations/Constallations';
+import Collaboration from '../../components/slides/constallations/Collaboration';
 import ITUImage from '../../assets/ITU.jpg';
-import mario from '../../assets/mario.jpg';
 import codingPirates from '../../assets/coding_pirates.png';
-import rpgCharacters from '../../assets/rpg.png';
-import treasureChest from '../../assets/rpgchest.png';
-import campaigns from '../../assets/campaigns.jpg';
 import ContactInfo from '../../components/slides/contact-info/ContactInfo';
+import OurFramework from '../../components/slides/our-framework/OurFramework';
 
 type ISlide = {
   title?: string;
@@ -36,7 +28,7 @@ type ISlide = {
 const slides: ISlide[] = [
   {
     title: 'Vi præsenterer',
-    subtitle: 'Matematik og programmering som spil',
+    subtitle: 'Undervisningsframework som kombinere matematik og programmering',
     content: <Welcome />,
   },
   {
@@ -81,7 +73,11 @@ const slides: ISlide[] = [
     content: <InspirationBrilliant />,
   },
   {
-    title: 'Den sjove del: Gamification elementer',
+    title: 'Vores framework facilitere',
+    content: <OurFramework />,
+  },
+  {
+    title: 'Et anvendelseseksempel: Læringsspil',
     subtitle: 'En underholdende oplevelse der vækker interesse og spænding',
     content: <GamificationPurpose />,
   },
@@ -95,52 +91,13 @@ const slides: ISlide[] = [
     content: <InspirationCodingPirates />,
   },
   {
-    title: 'Hvert undervisningsforløb bliver en spilkampagne',
-    subtitle: 'Opdelt i pensumemner fra matematik',
-    backgroundImage: {
-      src: campaigns,
-      opacity: 0.7,
-    },
-    content: <ContentCampaigns />,
-  },
-  {
-    title: 'Temaet er "eventyr" - noget de kender rigtig godt',
-    subtitle: 'Klassen har et hold, men eleverne spiller deres egen karakter',
-    backgroundImage: {
-      src: treasureChest,
-      opacity: 0.5,
-    },
-    content: <ThemeAndStructure />,
-  },
-  {
-    title: "Den enkelte karakter's udvikling",
-    backgroundImage: {
-      src: rpgCharacters,
-      opacity: 0.2,
-    },
-    content: <CharacterDevelopment />,
-  },
-  {
-    title: 'Din klasse dyster i at optjene flest fælles point',
-    content: <ClassRanking />,
-  },
-  {
-    title: 'Bibehold motivationen og koncentrationen med små MiniGames',
-    subtitle: 'Giver eleven en lille pause - ca. 2 min for hver 20 minutters opgaver',
-    backgroundImage: {
-      src: mario,
-      opacity: 0.3,
-    },
-    content: <MiniGames />,
-  },
-  {
     title: 'Vi ønsker en samarbejdspartner',
-    subtitle: 'Der kan skabe fagligt indhold til vores framework',
+    subtitle: 'Der vil skabe fagligt indhold gennem vores framework',
     content: <TeamingUp />,
   },
   {
-    title: 'Samarbejdskonstellationer',
-    content: <Constallations />,
+    title: 'Samarbejd med os',
+    content: <Collaboration />,
   },
   {
     title: 'Fang os på',

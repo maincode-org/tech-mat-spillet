@@ -5,7 +5,7 @@ const OurFocus: React.FC = () => {
     <AutocenteredBullets>
       <h3>{'>'} User Experience</h3>
       <h3>{'>'} Undervisningssituationer</h3>
-      <h3>{'>'} Gamification</h3>
+      <h3>{'>'} Skoleværktøjer</h3>
     </AutocenteredBullets>
   );
 };
