@@ -28,7 +28,7 @@ type ISlide = {
 const slides: ISlide[] = [
   {
     title: 'Vi præsenterer',
-    subtitle: 'Undervisningsframework som kombinere matematik og programmering',
+    subtitle: 'Et opgaveframework som kombinere matematik og programmering',
     content: <Welcome />,
   },
   {
@@ -54,7 +54,7 @@ const slides: ISlide[] = [
   },
   {
     title: 'Idéen: Samspil mellem matematik og programmering',
-    subtitle: 'Ikke abstrakt, men praktisk og virkelighedsnært\n\n\n\n\n> De lærer på dansk, men koden kan auto-oversættes til Node.js',
+    subtitle: 'Ikke abstrakt, men praktisk og virkelighedsnært\n\n\n\n\n> Eleven lærer på dansk, men koden kan auto-oversættes til Node.js',
     content: <ContentPurpose className="mt-3" />,
   },
   {
@@ -73,7 +73,7 @@ const slides: ISlide[] = [
     content: <InspirationBrilliant />,
   },
   {
-    title: 'Vores framework facilitere',
+    title: 'Vores framework faciliterer',
     content: <OurFramework />,
   },
   {

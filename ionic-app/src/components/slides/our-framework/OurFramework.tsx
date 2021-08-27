@@ -6,7 +6,7 @@ const OurFramework: React.FC = () => {
     <AutocenteredBullets>
       <h3>{'>'} Udvikling af nyt materiale til læringsplatforme</h3>
       <h3>{'>'} Interaktive opgaver på hjemmesider</h3>
-      <h3>{'>'} Opgave-motor til læringsspil og apps</h3>
+      <h3>{'>'} En opgave-motor til læringsspil og apps</h3>
     </AutocenteredBullets>
   );
 };

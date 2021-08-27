@@ -7,7 +7,7 @@ type IProps = {
 const OurBackground: React.FC<IProps> = () => {
   return (
     <AutocenteredBullets>
-      <h3>{'>'} Underviser og kursusforfatter på IT-Universitetet i København</h3>
+      <h3>{'>'} Undervisere og kursusforfattere hos IT-Universitetet i København</h3>
       <h3>{'>'} Oplæring af en håndfuld juniorudviklere som chefudvikler hos en startup</h3>
       <h3>{'>'} Aktive Open Source contributors og freelancere</h3>
     </AutocenteredBullets>
