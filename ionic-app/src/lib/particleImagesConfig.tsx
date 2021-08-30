@@ -3,11 +3,7 @@
 const options: any = {
   particles: {
     number: {
-      value: 80,
-      density: {
-        enable: true,
-        value_area: 2300,
-      },
+      value: 20,
     },
     line_linked: {
       enable: false,
@@ -38,12 +34,6 @@ const options: any = {
     size: {
       value: 40,
       random: false,
-      anim: {
-        enable: true,
-        speed: 4,
-        size_min: 10,
-        sync: false,
-      },
     },
   },
   retina_detect: false,
