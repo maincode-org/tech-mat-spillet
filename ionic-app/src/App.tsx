@@ -5,6 +5,7 @@ import './styles/generics.css';
 import './styles/code-highlighter.css';
 import Presentation from './screens/presentation/Presentation';
 import Sandbox from './screens/sandbox/Sandbox';
+import MaincodeWebsite from './screens/maincode-website/MaincodeWebsite';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -35,6 +36,7 @@ const App: React.FC = () => {
       <IonApp>
         <IonReactRouter>
           <IonRouterOutlet id="main">
+            <Route exact path="/maincode" component={MaincodeWebsite} />
             <Route exact path="/sandbox" component={Sandbox} />
             <Route exact path="/" component={Presentation} />
           </IonRouterOutlet>
