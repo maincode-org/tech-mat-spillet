@@ -25,6 +25,8 @@ const MaincodeWebsite: React.FC = () => {
           <Particles params={config} height={'100vh'} />
         </div>
 
+        {/** TODO - add fab for settings! Toggle animation + toggle dark-mode */}
+
         <IonSlides className={styles.slider} options={slideOpts} ref={ionSlidesRef} onIonSlideDidChange={handleSlideChange}>
           {slides.map((s, i) => (
             <FullscreenSlide key={i} progressIndicator={i > 0 ? `${i + 1}/${slides.length}` : undefined} title={s.title} subtitle={s.subtitle} backgroundImage={s.backgroundImage}>
