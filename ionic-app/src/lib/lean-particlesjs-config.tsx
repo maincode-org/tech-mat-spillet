@@ -4,7 +4,7 @@ const options: any = {
       value: 30,
       density: {
         enable: true,
-        value_area: 1100,
+        value_area: 1700,
       },
     },
     color: {
