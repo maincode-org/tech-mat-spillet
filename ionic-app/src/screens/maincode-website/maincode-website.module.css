@@ -15,7 +15,6 @@
   -moz-animation: fadein 2s; /* Firefox */
   -webkit-animation: fadein 2s; /* Safari and Chrome */
   -o-animation: fadein 2s; /* Opera */
-  box-shadow: 0 15px 10px -15px rgba(0, 0, 0, 0.5);
 }
 
 @keyframes fadein {

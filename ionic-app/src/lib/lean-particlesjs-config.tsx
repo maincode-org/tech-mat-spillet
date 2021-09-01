@@ -4,7 +4,7 @@ const options: any = {
       value: 30,
       density: {
         enable: true,
-        value_area: 800,
+        value_area: 1100,
       },
     },
     color: {
@@ -31,8 +31,8 @@ const options: any = {
       value: 8,
       random: true,
       anim: {
-        enable: false,
-        speed: 40,
+        enable: true,
+        speed: 3,
         size_min: 0.1,
         sync: false,
       },
@@ -74,9 +74,9 @@ const options: any = {
     },
     modes: {
       grab: {
-        distance: 131.86813186813188,
+        distance: 131,
         line_linked: {
-          opacity: 0.6799912572552641,
+          opacity: 0.67,
         },
       },
       bubble: {
