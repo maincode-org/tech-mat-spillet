@@ -3,8 +3,8 @@ import { useRef, useState } from 'react';
 import styles from './maincode-website.module.css';
 import FullscreenSlide from '../../components/fullscreen-slide/FullscreenSlide';
 import Particles from 'react-particles-js';
-import schoolOptions from '../../lib/particleImagesConfig';
 import slides from './slides';
+import config from '../../lib/lean-particlesjs-config';
 
 const slideOpts = {
   initialSlide: 0,
@@ -22,7 +22,7 @@ const MaincodeWebsite: React.FC = () => {
     <IonPage>
       <IonContent ref={ionContentRef} className="bg-cover-blur">
         <div className={styles.backgroundParticles}>
-          <Particles params={schoolOptions} height={'100vh'} />
+          <Particles params={config} height={'100vh'} />
         </div>
 
         <IonSlides className={styles.slider} options={slideOpts} ref={ionSlidesRef} onIonSlideDidChange={handleSlideChange}>
