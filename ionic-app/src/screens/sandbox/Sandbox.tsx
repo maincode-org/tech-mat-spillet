@@ -8,7 +8,7 @@ const Sandbox: React.FC = () => {
       <IonContent fullscreen>
         <div className="w-full h-full flex items-center justify-center">
           <div className={`${styles.centerBox} card-shadow rounded`}>
-            <CannonSim />
+            <CannonSim id="cannon" />
           </div>
         </div>
       </IonContent>

@@ -1,3 +1,4 @@
-#AtomP {
-  stroke: red;
+#body {
+  transform-origin: center;
+  transform-box: fill-box;
 }

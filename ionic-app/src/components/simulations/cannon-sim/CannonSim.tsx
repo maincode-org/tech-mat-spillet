@@ -1,27 +1,44 @@
 import './cannon-sim.css';
-import cannon from './cannon.svg';
 import drawing from './Drawing';
 import { useEffect, useRef } from 'react';
+import { CreateAnimation, Animation } from '@ionic/react';
+import { createAnimation } from '@ionic/core';
+import SimulationContainer from '../../simulation-container/SimulationContainer';
 
 type IProps = {
+  id: string;
   className?: string;
 };
 
-const CannonSim: React.FC<IProps> = ({ className }) => {
-  const drawingsRef = useRef<HTMLDivElement>(null);
+const CannonSim: React.FC<IProps> = ({ id, className }) => {
+  const canvasRef = useRef<HTMLElement>(null);
+  const animationRef = useRef<CreateAnimation>(null);
 
   useEffect(() => {
-    const atomP: HTMLElement = drawingsRef.current?.querySelector('#AtomP') as HTMLElement;
-    if (!atomP) return;
+    const cannon: SVGSVGElement = canvasRef.current?.querySelector('svg') as SVGSVGElement;
+    const cannonBody: HTMLElement = canvasRef.current?.querySelector('#body') as HTMLElement;
+    if (!cannonBody) return;
 
-    atomP.style.stroke = 'green';
-  });
+    console.log(cannon);
+
+    cannon.style.height = '10%';
+    cannon.style.width = '10%';
+    cannon.style.backgroundColor = 'blue';
+    cannon.style.left = '5%';
+    cannon.style.bottom = '5%';
+    cannon.style.position = 'absolute';
+    const animation: Animation = createAnimation().addElement(cannonBody).duration(2000).fromTo('transform', 'rotateZ(0deg)', 'rotateZ(45deg)');
+    animation.play();
+  }, []);
+
+  useEffect(() => {
+    animationRef.current?.animation.play();
+  }, []);
 
   return (
-    <div className={`${className ?? ''}`} ref={drawingsRef}>
-      <h1> test</h1>
+    <SimulationContainer id={id} ref={canvasRef}>
       {drawing}
-    </div>
+    </SimulationContainer>
   );
 };
 export default CannonSim;
