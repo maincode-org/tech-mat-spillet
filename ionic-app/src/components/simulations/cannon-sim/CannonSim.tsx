@@ -1,5 +1,4 @@
 import './cannon-sim.css';
-import cannon from './cannon.svg';
 import drawing from './Drawing';
 import { useEffect, useRef } from 'react';
 
