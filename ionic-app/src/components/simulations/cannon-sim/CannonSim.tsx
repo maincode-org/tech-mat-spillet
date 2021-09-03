@@ -1,10 +1,10 @@
 import './cannon-sim.css';
 import drawing from './Drawing';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Animation } from '@ionic/react';
 import { createAnimation } from '@ionic/core';
 import SimulationContainer from '../../simulation-container/SimulationContainer';
-import { applyCannonStyle, createHiPPICanvas, drawOnCanvas, enhanceCanvasQuality } from './helpers';
+import { applyCannonStyle, drawOnCanvas, enhanceCanvasQuality } from './helpers';
 
 type IProps = {
   id: string;
@@ -12,10 +12,19 @@ type IProps = {
 };
 
 const CannonSim: React.FC<IProps> = ({ id, className }) => {
+  const [hasPaintedSection, setHasPaintedSection] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
+    if (!sectionRef.current) return;
+    const resizeObserver = new ResizeObserver(() => setHasPaintedSection(true));
+    resizeObserver.observe(sectionRef.current);
+  }, [sectionRef]);
+
+  useEffect(() => {
+    if (!hasPaintedSection) return;
+
     const cannon: SVGSVGElement = sectionRef.current?.querySelector('svg') as SVGSVGElement;
     const cannonBody: HTMLElement = sectionRef.current?.querySelector('#body') as HTMLElement;
     if (!cannonBody) return;
@@ -28,10 +37,10 @@ const CannonSim: React.FC<IProps> = ({ id, className }) => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    enhanceCanvasQuality(canvas, 1000, 1000);
+    const context = enhanceCanvasQuality(canvas, sectionRef.current?.clientWidth ?? 0, 80, 80);
 
-    drawOnCanvas(canvas.getContext('2d') ?? undefined);
-  }, []);
+    if (context) drawOnCanvas(context);
+  }, [hasPaintedSection]);
 
   return (
     <SimulationContainer id={id} ref={sectionRef}>
