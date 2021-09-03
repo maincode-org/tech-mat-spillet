@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react';
 import { Animation } from '@ionic/react';
 import { createAnimation } from '@ionic/core';
 import SimulationContainer from '../../simulation-container/SimulationContainer';
-import { applyCannonStyle, drawOnCanvas } from './helpers';
+import { applyCannonStyle, createHiPPICanvas, drawOnCanvas, enhanceCanvasQuality } from './helpers';
 
 type IProps = {
   id: string;
@@ -25,16 +25,19 @@ const CannonSim: React.FC<IProps> = ({ id, className }) => {
     const animation: Animation = createAnimation().addElement(cannonBody).duration(2000).fromTo('transform', 'rotateZ(0deg)', 'rotateZ(45deg)');
     animation.play();
 
-    drawOnCanvas(canvasRef?.current?.getContext('2d') ?? undefined);
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    enhanceCanvasQuality(canvas, 1000, 1000);
+
+    drawOnCanvas(canvas.getContext('2d') ?? undefined);
   }, []);
 
   return (
     <SimulationContainer id={id} ref={sectionRef}>
       <>
         {drawing}
-        <div className="chartContainer">
-          <canvas className="w-full h-full" ref={canvasRef} />
-        </div>
+        <canvas className="canvas" ref={canvasRef} />
       </>
     </SimulationContainer>
   );
