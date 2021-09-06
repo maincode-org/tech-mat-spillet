@@ -71,6 +71,8 @@ const CannonSim: React.FC<IProps> = ({ id, className }) => {
       const myFlatFunction = linearFunction(0.5, 1);
       const myDownwardsFunction = linearFunction(-1, 5);
 
+      // new Map<EFunctionTypes, fn: (params: unknown) => (x: number) => number>
+
       drawFunction(plot, myFlatFunction, context);
     }
   }, [hasPaintedSection]);
