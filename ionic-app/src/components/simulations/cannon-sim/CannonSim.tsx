@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Animation } from '@ionic/react';
 import { createAnimation } from '@ionic/core';
 import SimulationContainer from '../../simulation-container/SimulationContainer';
-import { applyCannonStyle, drawPlot, drawPlotPoints, enhanceCanvasQuality, IAxisOptions, IPlotConfig } from './helpers';
+import { applyCannonStyle, drawFunction, drawPlot, drawPlotPoints, enhanceCanvasQuality, IAxisOptions, IPlotConfig } from './helpers';
 
 type IProps = {
   id: string;
@@ -62,6 +62,16 @@ const CannonSim: React.FC<IProps> = ({ id, className }) => {
         ],
         context
       );
+
+      const linearFunction = (a: number, b: number) => (x: number) => a * x + b;
+
+      const parabelFunction = (a: number, b: number, c: number) => (x: number) => a * x * x + b * x + c;
+
+      const myStaleFunction = linearFunction(3, 1);
+      const myFlatFunction = linearFunction(0.5, 1);
+      const myDownwardsFunction = linearFunction(-1, 5);
+
+      drawFunction(plot, myFlatFunction, context);
     }
   }, [hasPaintedSection]);
 

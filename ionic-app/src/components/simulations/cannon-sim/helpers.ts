@@ -194,6 +194,8 @@ export const drawPlotPoint = (plot: IPlotConfig, coord: ICoord, context: CanvasR
   context.fill();
 };
 
-export const drawPlotPoints = (plot: IPlotConfig, coords: ICoord[], context: CanvasRenderingContext2D): void => {
-  coords.forEach((c) => drawPlotPoint(plot, c, context));
+export const drawPlotPoints = (plot: IPlotConfig, coords: ICoord[], context: CanvasRenderingContext2D): void => coords.forEach((c) => drawPlotPoint(plot, c, context));
+
+export const drawFunction = (plot: IPlotConfig, fn: (x: number) => number, context: CanvasRenderingContext2D): void => {
+  console.log('Not implemented yet!');
 };
