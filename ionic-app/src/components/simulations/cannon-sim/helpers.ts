@@ -1,23 +1,30 @@
-export const drawOnCanvas = (context: CanvasRenderingContext2D): void => {
+export const drawPlot = (context: CanvasRenderingContext2D): void => {
   const ratio = window.devicePixelRatio;
   const canvasWidth = context.canvas.width / ratio;
   const canvasHeight = context.canvas.height / ratio;
 
-  context.font = '20px Roboto';
+  const fontSize = 20;
+  const letterOffset = fontSize / 2 - 3;
+
+  const topOffset = fontSize * 1.25;
+  const rightOffset = fontSize * 1.25;
+  const axisOffset = fontSize * 1.5; // Space for axis labels and details
+
+  context.font = `${fontSize}px Roboto`;
   context.strokeStyle = '#000000';
   context.fillStyle = '#000000';
 
   // y-axis
-  context.moveTo(0, 0);
-  context.lineTo(0, canvasHeight);
+  context.moveTo(axisOffset, topOffset);
+  context.lineTo(axisOffset, canvasHeight - axisOffset);
   context.stroke();
-  context.fillText('Y', 20, 20);
+  context.fillText('Y', axisOffset - letterOffset, topOffset - letterOffset);
 
   // x-axis
-  context.moveTo(0, canvasHeight);
-  context.lineTo(canvasWidth, canvasHeight);
+  context.moveTo(axisOffset, canvasHeight - axisOffset);
+  context.lineTo(canvasWidth - rightOffset, canvasHeight - axisOffset);
   context.stroke();
-  context.fillText('X', canvasWidth - 20, canvasHeight - 20);
+  context.fillText('X', canvasWidth - rightOffset + letterOffset, canvasHeight - axisOffset + letterOffset);
 
   // Trajectory
   context.beginPath();
@@ -26,7 +33,7 @@ export const drawOnCanvas = (context: CanvasRenderingContext2D): void => {
   context.moveTo(0, canvasHeight);
 
   calcTrajectoryPath(context, -0.05, 1.88, canvasWidth);
-  context.stroke();
+  // context.stroke();
 };
 
 export const applyCannonStyle = (cannon: SVGSVGElement) => {
@@ -36,19 +43,6 @@ export const applyCannonStyle = (cannon: SVGSVGElement) => {
   cannon.style.bottom = '2%';
   cannon.style.position = 'absolute';
 };
-
-/* Stack-overflow solution
-export const createHiPPICanvas = (w: number, h: number) => {
-  const ratio = window.devicePixelRatio;
-  const cv = document.createElement('canvas');
-  cv.width = w * ratio;
-  cv.height = h * ratio;
-  cv.style.width = w + 'px';
-  cv.style.height = h + 'px';
-  cv.getContext('2d')?.scale(ratio, ratio);
-  return cv;
-};
- */
 
 export const enhanceCanvasQuality = (canvas: HTMLCanvasElement, simulationSize: number, wPct: number, hPct: number): CanvasRenderingContext2D | null => {
   const ratio = window.devicePixelRatio;

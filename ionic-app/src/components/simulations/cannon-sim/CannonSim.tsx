@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Animation } from '@ionic/react';
 import { createAnimation } from '@ionic/core';
 import SimulationContainer from '../../simulation-container/SimulationContainer';
-import { applyCannonStyle, drawOnCanvas, enhanceCanvasQuality } from './helpers';
+import { applyCannonStyle, drawPlot, enhanceCanvasQuality } from './helpers';
 
 type IProps = {
   id: string;
@@ -39,7 +39,7 @@ const CannonSim: React.FC<IProps> = ({ id, className }) => {
 
     const context = enhanceCanvasQuality(canvas, sectionRef.current?.clientWidth ?? 0, 80, 80);
 
-    if (context) drawOnCanvas(context);
+    if (context) drawPlot(context);
   }, [hasPaintedSection]);
 
   return (
