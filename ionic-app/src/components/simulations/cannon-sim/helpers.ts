@@ -1,34 +1,101 @@
-export const drawPlot = (context: CanvasRenderingContext2D): void => {
+export type IAxisOption = {
+  fromValue: number;
+  toValue: number;
+  label?: string;
+  numberOfDashes?: number;
+};
+
+export type IAxisOptions = {
+  x: IAxisOption;
+  y: IAxisOption;
+};
+
+export const drawPlot = (context: CanvasRenderingContext2D, axisOptions: IAxisOptions): void => {
   const ratio = window.devicePixelRatio;
   const canvasWidth = context.canvas.width / ratio;
   const canvasHeight = context.canvas.height / ratio;
 
+  // Font settings and helpers
   const fontSize = 20;
-  const letterOffset = fontSize / 2 - 3;
-
-  const topOffset = fontSize * 1.25;
-  const rightOffset = fontSize * 1.25;
-  const axisOffset = fontSize * 1.5; // Space for axis labels and details
-
   context.font = `${fontSize}px Roboto`;
+
+  const textWidth = (text: string): number => context.measureText(text).width;
+  const textHeight = (text: string): number => context.measureText(text).actualBoundingBoxAscent;
+  const textPadding = textHeight('1');
+
+  const textWidthCenter = (text: string): number => textWidth(text) / 2;
+  const textHeightCenter = (text: string): number => textHeight(text) / 2;
+
+  const pointDashSize = 10;
+  const xTotalDashes = axisOptions.x.numberOfDashes ?? 10;
+  const yTotalDashes = axisOptions.y.numberOfDashes ?? 10;
+
+  const shouldRoundX = axisOptions.x.toValue - axisOptions.x.fromValue > xTotalDashes;
+  const shouldRoundY = axisOptions.y.toValue - axisOptions.y.fromValue > yTotalDashes;
+  const yRoundPadding = !shouldRoundY ? textWidth('.4') : 0;
+
+  // Axis settings and helpers
+  const offset = {
+    top: textHeight('Y') * 2,
+    right: textWidthCenter(`${axisOptions.x.toValue}`) > textWidth('X') * 1.25 ? textWidthCenter(`${axisOptions.x.toValue}`) : textWidth('X') * 2,
+    bottom: textHeight(`${axisOptions.x.toValue}`) * 2.5,
+    left: textWidth(`${axisOptions.y.toValue}`) + textPadding + yRoundPadding,
+  };
+
+  const xStepWidth = (canvasWidth - offset.right - offset.left) / xTotalDashes;
+  const yStepWidth = (canvasHeight - offset.top - offset.bottom) / yTotalDashes;
+
+  const xStepValue = (axisOptions.x.toValue - axisOptions.x.fromValue) / xTotalDashes;
+  const yStepValue = (axisOptions.y.toValue - axisOptions.y.fromValue) / yTotalDashes;
+
   context.strokeStyle = '#000000';
   context.fillStyle = '#000000';
+  context.lineWidth = 2;
 
   // y-axis
-  context.moveTo(axisOffset, topOffset);
-  context.lineTo(axisOffset, canvasHeight - axisOffset);
-  context.stroke();
-  context.fillText('Y', axisOffset - letterOffset, topOffset - letterOffset);
+  context.moveTo(offset.left, offset.top);
+  context.lineTo(offset.left, canvasHeight - offset.bottom);
+  context.fillText('Y', offset.left - textWidthCenter('Y'), offset.top - textHeightCenter('Y'));
 
   // x-axis
-  context.moveTo(axisOffset, canvasHeight - axisOffset);
-  context.lineTo(canvasWidth - rightOffset, canvasHeight - axisOffset);
-  context.stroke();
-  context.fillText('X', canvasWidth - rightOffset + letterOffset, canvasHeight - axisOffset + letterOffset);
+  context.moveTo(offset.left, canvasHeight - offset.bottom);
+  context.lineTo(canvasWidth - offset.right, canvasHeight - offset.bottom);
+  context.fillText('X', canvasWidth - offset.right + textWidthCenter('X'), canvasHeight - offset.bottom + textHeightCenter('X'));
+
+  // Draw x-axis details and ranges
+  for (let i = 0; i <= xTotalDashes; i++) {
+    const xAxisPoint = offset.left + xStepWidth * i;
+
+    if (i !== 0) {
+      context.moveTo(xAxisPoint, canvasHeight - offset.bottom + pointDashSize / 2);
+      context.lineTo(xAxisPoint, canvasHeight - offset.bottom - pointDashSize / 2);
+    }
+
+    const stepTextNumber = axisOptions.x.fromValue + i * xStepValue;
+    const stepText = `${shouldRoundX ? Math.round(stepTextNumber) : stepTextNumber.toFixed(1)}`;
+    context.fillText(stepText, xAxisPoint - textWidthCenter(stepText), canvasHeight - textHeightCenter(stepText));
+  }
+
+  // Draw y-axis details and ranges
+  context.textAlign = 'right';
+  for (let i = 0; i <= yTotalDashes; i++) {
+    const yAxisPoint = canvasHeight - offset.bottom - yStepWidth * i;
+
+    if (i !== 0) {
+      context.moveTo(offset.left + pointDashSize / 2, yAxisPoint);
+      context.lineTo(offset.left - pointDashSize / 2, yAxisPoint);
+    }
+
+    const stepTextNumber = axisOptions.y.fromValue + i * yStepValue;
+    const stepText = `${shouldRoundY ? Math.round(stepTextNumber) : stepTextNumber.toFixed(1)}`;
+    context.fillText(stepText, offset.left - pointDashSize / 2 - textPadding / 2, yAxisPoint + textHeightCenter(stepText));
+  }
+
+  context.textAlign = 'left';
+  context.stroke(); // Draws the axis' with numbers and details
 
   // Trajectory
   context.beginPath();
-  context.lineWidth = 3;
   context.strokeStyle = 'green';
   context.moveTo(0, canvasHeight);
 
