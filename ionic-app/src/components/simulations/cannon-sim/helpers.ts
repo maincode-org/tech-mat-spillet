@@ -167,15 +167,28 @@ export type ICoord = {
   y: number;
 };
 
-export const coordToPoint = (coord: ICoord, plot: IPlotConfig): ICoord => {
-  const xInPoint = plot.offset.left + coord.x * plot.stepWidth.x - plot.stepWidth.x * plot.axis.x.fromValue;
-  const yInPoint = plot.canvasHeight - (plot.offset.bottom + coord.y * plot.stepWidth.y) + plot.stepWidth.y * plot.axis.y.fromValue;
-  console.log(1 / plot.stepValue.x);
-  return { x: xInPoint, y: yInPoint };
+export type IPoint = ICoord & { isInPlotView: boolean };
+
+export const coordToPoint = (coord: ICoord, plot: IPlotConfig): IPoint => {
+  const { axis, stepValue, stepWidth, offset, canvasHeight } = plot;
+
+  /** The reciprocal (1/..) indicates the number of steps between a full value. Eg. step value 0.5 => 2 steps between each value. */
+  const xSteps = coord.x * stepWidth.x * (1 / stepValue.x);
+  const xFromOffset = axis.x.fromValue * (1 / stepValue.x) * stepWidth.x;
+  const x = offset.left + xSteps - xFromOffset;
+
+  const ySteps = coord.y * stepWidth.y * (1 / stepValue.y);
+  const yFromOffset = axis.y.fromValue * (1 / stepValue.y) * stepWidth.y;
+  const y = canvasHeight - (offset.bottom + ySteps) + yFromOffset;
+
+  const isInPlotView = coord.x >= axis.x.fromValue && coord.x <= axis.x.toValue && coord.y >= axis.y.fromValue && coord.y <= axis.y.toValue;
+
+  return { x, y, isInPlotView };
 };
 
 export const drawPlotPoint = (plot: IPlotConfig, coord: ICoord, context: CanvasRenderingContext2D): void => {
   const point = coordToPoint(coord, plot);
+  if (!point.isInPlotView) return;
   context.beginPath();
   context.arc(point.x, point.y, 2, 0, 2 * Math.PI);
   context.fill();

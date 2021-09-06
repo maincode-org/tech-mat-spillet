@@ -55,10 +55,10 @@ const CannonSim: React.FC<IProps> = ({ id, className }) => {
       drawPlotPoints(
         plot,
         [
-          { x: 8, y: 8 },
-          { x: 6, y: 6 },
-          { x: 4.8, y: 4.8 },
           { x: 1, y: 1 },
+          { x: 4.8, y: 4.8 },
+          { x: 6, y: 6 },
+          { x: 8, y: 8 },
         ],
         context
       );
