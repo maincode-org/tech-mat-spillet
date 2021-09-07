@@ -54,14 +54,17 @@ export const drawPlot = (context: CanvasRenderingContext2D, axisOptions: IAxisOp
   const textHeightCenter = (text: string): number => textHeight(text) / 2;
 
   const pointDashSize = 10;
-  const xTotalDashes = axisOptions.x.numberOfDashes ?? 10;
-  const yTotalDashes = axisOptions.y.numberOfDashes ?? 10;
-
-  const shouldRoundX = axisOptions.x.toValue - axisOptions.x.fromValue >= xTotalDashes;
-  const shouldRoundY = axisOptions.y.toValue - axisOptions.y.fromValue >= yTotalDashes;
-  const yRoundPadding = !shouldRoundY ? textWidth('.4') : 0;
+  const xNumberOfDashes = axisOptions.x.numberOfDashes ?? 10;
+  const yNumberOfDashes = axisOptions.y.numberOfDashes ?? 10;
 
   // Axis settings and helpers
+  const xStepValue = (axisOptions.x.toValue - axisOptions.x.fromValue) / xNumberOfDashes;
+  const yStepValue = (axisOptions.y.toValue - axisOptions.y.fromValue) / yNumberOfDashes;
+
+  const shouldRoundX = shouldRoundAxisValues(xNumberOfDashes, axisOptions.x.fromValue, xStepValue);
+  const shouldRoundY = shouldRoundAxisValues(yNumberOfDashes, axisOptions.y.fromValue, yStepValue);
+  const yRoundPadding = !shouldRoundY ? textWidth('.4') : 0;
+
   const offset = {
     top: textHeight('Y') * 2,
     right: textWidthCenter(`${axisOptions.x.toValue}`) > textWidth('X') * 1.25 ? textWidthCenter(`${axisOptions.x.toValue}`) : textWidth('X') * 2,
@@ -69,11 +72,8 @@ export const drawPlot = (context: CanvasRenderingContext2D, axisOptions: IAxisOp
     left: textWidth(`${axisOptions.y.toValue}`) + textPadding + yRoundPadding,
   };
 
-  const xStepWidth = (canvasWidth - offset.right - offset.left) / xTotalDashes;
-  const yStepWidth = (canvasHeight - offset.top - offset.bottom) / yTotalDashes;
-
-  const xStepValue = (axisOptions.x.toValue - axisOptions.x.fromValue) / xTotalDashes;
-  const yStepValue = (axisOptions.y.toValue - axisOptions.y.fromValue) / yTotalDashes;
+  const xStepWidth = (canvasWidth - offset.right - offset.left) / xNumberOfDashes;
+  const yStepWidth = (canvasHeight - offset.top - offset.bottom) / yNumberOfDashes;
 
   context.strokeStyle = '#000000';
   context.fillStyle = '#000000';
@@ -90,7 +90,7 @@ export const drawPlot = (context: CanvasRenderingContext2D, axisOptions: IAxisOp
   context.fillText('X', canvasWidth - offset.right + textWidthCenter('X'), canvasHeight - offset.bottom + textHeightCenter('X'));
 
   // Draw x-axis details and ranges
-  for (let i = 0; i <= xTotalDashes; i++) {
+  for (let i = 0; i <= xNumberOfDashes; i++) {
     const xAxisPoint = offset.left + xStepWidth * i;
 
     if (i !== 0) {
@@ -98,14 +98,14 @@ export const drawPlot = (context: CanvasRenderingContext2D, axisOptions: IAxisOp
       context.lineTo(xAxisPoint, canvasHeight - offset.bottom - pointDashSize / 2);
     }
 
-    const stepTextNumber = axisOptions.x.fromValue + i * xStepValue;
-    const stepText = `${shouldRoundX ? Math.round(stepTextNumber) : stepTextNumber.toFixed(1)}`;
+    const stepDisplayNumber = axisOptions.x.fromValue + i * xStepValue;
+    const stepText = `${shouldRoundX ? Math.round(stepDisplayNumber) : stepDisplayNumber.toFixed(1)}`;
     context.fillText(stepText, xAxisPoint - textWidthCenter(stepText), canvasHeight - textHeightCenter(stepText));
   }
 
   // Draw y-axis details and ranges
   context.textAlign = 'right';
-  for (let i = 0; i <= yTotalDashes; i++) {
+  for (let i = 0; i <= yNumberOfDashes; i++) {
     const yAxisPoint = canvasHeight - offset.bottom - yStepWidth * i;
 
     if (i !== 0) {
@@ -113,8 +113,8 @@ export const drawPlot = (context: CanvasRenderingContext2D, axisOptions: IAxisOp
       context.lineTo(offset.left - pointDashSize / 2, yAxisPoint);
     }
 
-    const stepTextNumber = axisOptions.y.fromValue + i * yStepValue;
-    const stepText = `${shouldRoundY ? Math.round(stepTextNumber) : stepTextNumber.toFixed(1)}`;
+    const stepDisplayNumber = axisOptions.y.fromValue + i * yStepValue;
+    const stepText = `${shouldRoundY ? Math.round(stepDisplayNumber) : stepDisplayNumber.toFixed(1)}`;
     context.fillText(stepText, offset.left - pointDashSize / 2 - textPadding / 2, yAxisPoint + textHeightCenter(stepText));
   }
 
@@ -127,10 +127,15 @@ export const drawPlot = (context: CanvasRenderingContext2D, axisOptions: IAxisOp
     fontSize,
     offset,
     axis: axisOptions,
-    numberOfDashes: { x: xTotalDashes, y: yTotalDashes },
+    numberOfDashes: { x: xNumberOfDashes, y: yNumberOfDashes },
     stepWidth: { x: xStepWidth, y: yStepWidth },
     stepValue: { x: xStepValue, y: yStepValue },
   };
+};
+
+const shouldRoundAxisValues = (numberOfDashes: number, fromValue: number, stepValue: number): boolean => {
+  const values = Array.from(Array(numberOfDashes).keys()).map((i) => fromValue + i * stepValue);
+  return values.every((num) => num % 1 === 0);
 };
 
 export const applyCannonStyle = (cannon: SVGSVGElement) => {
@@ -152,14 +157,6 @@ export const enhanceCanvasQuality = (canvas: HTMLCanvasElement, simulationSize: 
   const context = canvas.getContext('2d');
   context?.scale(ratio, ratio);
   return context;
-};
-
-// a and c as in a*x²+b*x+c
-const calcTrajectoryPath = (context: CanvasRenderingContext2D, a: number, c: number, maxXValue: number) => {
-  for (let x = 0; x < maxXValue; x++) {
-    const y = ((a * x) ^ 2) + x + c;
-    context.lineTo(x, y);
-  }
 };
 
 export type ICoord = {
@@ -189,6 +186,7 @@ export const coordToPoint = (coord: ICoord, plot: IPlotConfig): IPoint => {
 export const drawPlotPoint = (plot: IPlotConfig, coord: ICoord, context: CanvasRenderingContext2D): void => {
   const point = coordToPoint(coord, plot);
   if (!point.isInPlotView) return;
+
   context.beginPath();
   context.arc(point.x, point.y, 2, 0, 2 * Math.PI);
   context.fill();
@@ -196,6 +194,25 @@ export const drawPlotPoint = (plot: IPlotConfig, coord: ICoord, context: CanvasR
 
 export const drawPlotPoints = (plot: IPlotConfig, coords: ICoord[], context: CanvasRenderingContext2D): void => coords.forEach((c) => drawPlotPoint(plot, c, context));
 
-export const drawFunction = (plot: IPlotConfig, fn: (x: number) => number, context: CanvasRenderingContext2D): void => {
-  console.log('Not implemented yet!');
+export const translateYPoint = (plot: IPlotConfig, y: number): number => {
+  return plot.canvasHeight - (plot.offset.bottom + y);
+};
+
+export const drawFunction = (plot: IPlotConfig, fn: (x: number) => number, context: CanvasRenderingContext2D, color?: string): void => {
+  context.beginPath();
+  const yOffset = fn(0) * plot.stepWidth.y;
+
+  context.moveTo(plot.offset.left, translateYPoint(plot, fn(plot.offset.left)) - yOffset);
+
+  console.log(plot.offset.left, translateYPoint(plot, fn(plot.offset.left)));
+
+  console.log(coordToPoint({ x: 0, y: 3 }, plot));
+
+  for (let x = 0; x <= plot.canvasWidth - (plot.offset.left + plot.offset.right); x++) {
+    context.lineTo(x + plot.offset.left, translateYPoint(plot, fn(x)) - yOffset + fn(0));
+    console.log(x, translateYPoint(plot, fn(x)));
+  }
+
+  context.strokeStyle = color ?? 'rgba(9,67,131,0.5)';
+  context.stroke();
 };

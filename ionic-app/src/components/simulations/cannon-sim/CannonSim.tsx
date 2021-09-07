@@ -4,7 +4,9 @@ import { useEffect, useRef, useState } from 'react';
 import { Animation } from '@ionic/react';
 import { createAnimation } from '@ionic/core';
 import SimulationContainer from '../../simulation-container/SimulationContainer';
-import { applyCannonStyle, drawFunction, drawPlot, drawPlotPoints, enhanceCanvasQuality, IAxisOptions, IPlotConfig } from './helpers';
+import { applyCannonStyle, drawFunction, drawPlot, drawPlotPoint, drawPlotPoints, enhanceCanvasQuality, IAxisOptions, IPlotConfig } from './helpers';
+import { linearFunction } from './math-lib';
+import { drawPoint } from 'chart.js/helpers';
 
 type IProps = {
   id: string;
@@ -41,39 +43,20 @@ const CannonSim: React.FC<IProps> = ({ id, className }) => {
 
     const axisOptions: IAxisOptions = {
       x: {
-        fromValue: 5,
+        fromValue: 0,
         toValue: 10,
       },
       y: {
-        fromValue: 5,
+        fromValue: 0,
         toValue: 10,
       },
     };
     if (context) {
       const plot: IPlotConfig = drawPlot(context, axisOptions);
 
-      drawPlotPoints(
-        plot,
-        [
-          { x: 1, y: 1 },
-          { x: 4.8, y: 4.8 },
-          { x: 6, y: 6 },
-          { x: 8, y: 8 },
-        ],
-        context
-      );
-
-      const linearFunction = (a: number, b: number) => (x: number) => a * x + b;
-
-      const parabelFunction = (a: number, b: number, c: number) => (x: number) => a * x * x + b * x + c;
-
-      const myStaleFunction = linearFunction(3, 1);
-      const myFlatFunction = linearFunction(0.5, 1);
-      const myDownwardsFunction = linearFunction(-1, 5);
-
-      // new Map<EFunctionTypes, fn: (params: unknown) => (x: number) => number>
-
-      drawFunction(plot, myFlatFunction, context);
+      drawPlotPoint(plot, { x: 2, y: 4 }, context);
+      drawFunction(plot, linearFunction(2, 0), context);
+      drawFunction(plot, linearFunction(1, 2), context, 'rgb(148,16,126)');
     }
   }, [hasPaintedSection]);
 
