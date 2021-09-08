@@ -3,3 +3,4 @@
 
 cd ionic-app || exit
 npm run fix
+git add .
