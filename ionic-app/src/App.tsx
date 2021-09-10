@@ -24,7 +24,7 @@ import '@ionic/react/css/flex-utils.css';
 import '@ionic/react/css/display.css';
 
 /* Theme variables */
-import './styles/ionic-theme.css';
+import './styles/theme.css';
 
 /* MUI theme */
 import theme from './lib/mui-theme';
